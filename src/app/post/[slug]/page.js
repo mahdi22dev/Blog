@@ -27,7 +27,7 @@ export default async function Home({ params }) {
             priority
           />
         </div>
-
+        <h1 className='text-7xl sm:text-xl'>{post.title}</h1>
         <article class='prose lg:prose-xl prose-zinc max-w-4xl mx-auto p-10'>
           <PortableText value={post.body} />
           {/* <MarkDown content={""} /> */}
