@@ -36,7 +36,7 @@ const BlogContent = () => {
               .url();
 
             return (
-              <div>
+              <div key={post.title}>
                 <p>{post.title}</p>
                 <p>author : {post.authorname}</p>
                 <Image
