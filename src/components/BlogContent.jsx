@@ -43,7 +43,7 @@ const BlogContent = () => {
                   src={imageSrc}
                   width={500}
                   height={500}
-                  alt={mainImage.alt}
+                  alt={post.mainImage.alt}
                 />
               </div>
             );

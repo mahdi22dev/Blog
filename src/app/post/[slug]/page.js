@@ -23,6 +23,7 @@ export default async function Home({ params }) {
           <Image
             className='rounded-sm object-cover'
             src={imageSrc}
+            alt={post.mainImage.alt}
             fill
             priority
           />
