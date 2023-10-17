@@ -2,8 +2,8 @@
 import React, { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
 import { urlFor } from "@/utils/sanity-utils";
-import { client } from "../../sanity/lib/client";
-import Skeleton from "./Loading/Skeleton";
+import { client } from "../../../sanity/lib/client";
+import Skeleton from "../Loading/Skeleton";
 
 const BlogContent = () => {
   const [data, setData] = useState([]);
