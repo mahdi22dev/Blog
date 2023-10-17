@@ -4,6 +4,7 @@ import Search from "./Search";
 import Navbar from "./Navbar";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { useGlobalContext } from "@/context/context";
+import Image from "next/image";
 export default function Header() {
   const { toggle, setToggle } = useGlobalContext();
   return (
@@ -15,9 +16,13 @@ export default function Header() {
         />
         {/* navbar */}
         <div className='w-full'>
-          <h1 className='mx-auto text-primary text-center mb-0 md:mb-10'>
-            Logo
-          </h1>
+          <Image
+            src={"/logo.png"}
+            alt='website logo'
+            width={150}
+            height={150}
+            className='mx-auto'
+          />
           {/* nav */}
           <Navbar />
         </div>
