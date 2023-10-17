@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={`${inter.className}`}>
         <AppProvider>
+          <div className='h-[2px] bg-gray-200'></div>
           <Header />
+          <div className='h-[2px] bg-gray-200'></div>
           {children}
         </AppProvider>
       </body>

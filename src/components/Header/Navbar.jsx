@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`navbar ${
+      className={`navbar z-50 ${
         toggle ? "open" : "hide"
       } w-2/4 md:!relative md:w-full md:max-w-2xl md:h-12 md:min-h-[20px] md:mx-auto bg-white shadow-md rounded md:p-2 md:flex md:justify-center md:items-center md:flex-row md:transform-none md:top-0 md:left-0`}
     >

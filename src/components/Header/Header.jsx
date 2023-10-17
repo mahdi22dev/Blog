@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Header() {
   const { toggle, setToggle } = useGlobalContext();
   return (
-    <div className='w-full flex flex-col justify-center gap-7 min-h-[200px] p-5'>
+    <div className='w-full flex flex-col justify-center gap-7 min-h-[100px] p-5'>
       <nav className='w-full flex max-w-2xl mx-auto items-center justify-center gap-5'>
         <BiMenuAltLeft
           className='cursor-pointer mt-4 md:mt-14 text-5xl md:hidden hover:text-primary'
@@ -20,7 +20,7 @@ export default function Header() {
             src={"/logo.png"}
             alt='website logo'
             width={150}
-            height={150}
+            height={100}
             className='mx-auto'
           />
           {/* nav */}
