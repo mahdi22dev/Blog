@@ -3,5 +3,22 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-50;
+  @apply bg-gray-100;
+}
+
+@layer base {
+  :root {
+    --text: #0b0408;
+    --background: #f1f5f9;
+    --primary: #dca8a9;
+    --secondary: #e3ceba;
+    --accent: #94673d;
+  }
+  .dark {
+    --text: #fbf4f8;
+    --background: #210d17;
+    --primary: #582324;
+    --secondary: #45301c;
+    --accent: #c2956b;
+  }
 }
