@@ -30,13 +30,14 @@ body {
   }
 }
 
-/* .navbar {
+.navbar {
+  position: absolute;
   top: 50%;
-  transform: translate(-120%, -50%);
+  transform: translate(-200%, -50%);
   left: 50%;
   text-align: center;
-  @apply flex flex-col gap-12 min-h-screen h-screen p-2;
-} */
+  @apply flex flex-col gap-12 min-h-screen h-screen p-10 pt-20 text-center;
+}
 .center-close-open {
   position: absolute;
   top: 5%;
@@ -45,16 +46,8 @@ body {
   text-align: center;
 }
 .open {
-  position: absolute;
-  top: 50%;
   transform: translate(-100%, -50%);
-  left: 50%;
-  @apply flex flex-col gap-12 min-h-screen h-screen p-10 pt-20 text-center;
 }
 .hide {
-  position: absolute;
-  top: 50%;
   transform: translate(-200%, -50%);
-  left: 50%;
-  @apply flex flex-col gap-12 min-h-screen h-screen p-10 pt-20 text-center;
 }

@@ -10,7 +10,7 @@ export default function Header() {
     <div className='w-full flex flex-col justify-center gap-7 min-h-[200px] p-5'>
       <nav className='w-full flex max-w-2xl mx-auto items-center justify-center gap-5'>
         <BiMenuAltLeft
-          className='cursor-pointer'
+          className='cursor-pointer mt-4 md:mt-14 text-5xl md:hidden hover:text-primary'
           onClick={() => setToggle(!toggle)}
         />
         {/* navbar */}

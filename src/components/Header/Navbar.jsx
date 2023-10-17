@@ -10,13 +10,13 @@ export default function Navbar() {
 
   return (
     <div
-      className={`${
+      className={`navbar ${
         toggle ? "open" : "hide"
-      }  w-2/4 md:!relative md:w-full md:max-w-2xl md:h-12 md:min-h-[20px] md:mx-auto bg-white shadow-md rounded md:p-2 md:flex md:justify-center md:items-center md:flex-row md:transform-none md:top-0 md:left-0`}
+      } w-2/4 md:!relative md:w-full md:max-w-2xl md:h-12 md:min-h-[20px] md:mx-auto bg-white shadow-md rounded md:p-2 md:flex md:justify-center md:items-center md:flex-row md:transform-none md:top-0 md:left-0`}
     >
       {toggle ? (
         <FaWindowClose
-          className='center-close-open cursor-pointer flex md:hidden'
+          className='center-close-open cursor-pointer flex md:hidden hover:text-primary'
           onClick={() => setToggle(!toggle)}
         />
       ) : null}
