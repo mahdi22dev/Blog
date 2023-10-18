@@ -30,10 +30,14 @@ export default function Featured({ post, maxw, width }) {
       >
         {post.categories[0].title}
       </Link>
-      <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2'>
-        <p className=' text-white hover:opacity-90 transition font-bold text-2xl mt-2'>
+      <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2 '>
+        <p
+          class='leading-9 text-white hover:opacity-90  font-bold text-2xl mt-2 bg-gradient-to-r from-red-200 via-red-200 to-red-200 bg-[length:0%_5px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_5px] transition-all duration-500
+        '
+        >
           {post.title}
         </p>
+
         <p className='text-white hover:opacity-90 transition font-thin text-xs mt-2'>
           {post.authorname} <span className='mx-2'>-</span>{" "}
           {dateFormater(post.publishedAt)}

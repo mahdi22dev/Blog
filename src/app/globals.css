@@ -36,7 +36,7 @@ body {
   transform: translate(-200%, -50%);
   left: 50%;
   text-align: center;
-  @apply flex flex-col justify-start min-h-screen h-full p-10 pt-20 pl-4 text-center;
+  @apply flex flex-col justify-start min-h-screen h-full pt-20  text-center;
 }
 .center-close-open {
   position: absolute;
@@ -52,6 +52,30 @@ body {
 .hide {
   transform: translate(-200%, -50%);
   transition: transform 0.9s ease;
+}
+/* 1 */
+.underlineanimation {
+  @apply relative;
+}
+.underlineanimation::after {
+  @apply content-[''] bg-primary opacity-60 h-1 absolute w-[0%] left-0 -bottom-[3px] rounded-xl duration-300;
+}
+.underlineanimation::after:hover {
+  @apply w-[100%];
+}
+
+.resnavbaranimation:hover {
+  @apply border border-red-500 border-opacity-50 bg-white bg-opacity-10;
+}
+/* 2 */
+.showastick {
+  @apply relative;
+}
+.showastick::before {
+  @apply content-[''] bg-red-900 opacity-60 h-1 absolute w-[0px] left-5 -bottom-[-20px] rounded-xl duration-500;
+}
+.showastick::before:hover {
+  @apply w-[30px];
 }
 
 /* css spinner */

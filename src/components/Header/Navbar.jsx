@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link
             key={link.id}
             href={link.link}
-            className='font-medium hover:text-primary transition'
+            className='font-medium hover:text-primary transition-all underlineanimation'
           >
             {link.title}
           </Link>
