@@ -28,8 +28,8 @@ body,_createdAt,
   const imageSrc = urlFor(post.mainImage).url();
 
   return (
-    <main className=' text-black mx-auto w-full flex flex-col md:flex-row max-w-7xl'>
-      <article className='mt-3 mx-10 mb-10 max-w-4xl shadow-md	bg-white'>
+    <main className=' text-black mx-auto w-full flex flex-col lg:flex-row max-w-7xl'>
+      <article className='mt-3 mx-10 mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
         <div className='relative h-[60vh] mb-5 block mx-auto'>
           <Image
             className='rounded-t-lg object-cover saturate-150'
