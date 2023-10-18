@@ -4,10 +4,22 @@ import { client } from "../../../../sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import { urlFor } from "@/utils/sanity-utils";
+import Profile from "@/components/Post/Profile";
 
 export default async function Home({ params }) {
   const slug = params.slug;
-  const query = `*[_type == "post" && slug.current == $slug][0]`;
+  const query = `
+  *[_type == "post" && slug.current == $slug][0] {
+    title,
+    mainImage,
+body,_createdAt,
+    author-> {
+     image,
+     name,
+     slug
+    }
+  }
+`;
   const post = await client.fetch(query, { slug });
   console.log(post);
   if (!post) {
@@ -16,25 +28,32 @@ export default async function Home({ params }) {
   const imageSrc = urlFor(post.mainImage).url();
 
   return (
-    <main className=' text-black  mx-auto  w-full'>
-      <div className='mt-10  mx-auto'>
-        <div className='w-full bg-white'>
-          <div className='relative  h-[60vh] mb-5 block max-w-7xl mx-auto'>
-            <Image
-              className='rounded-sm  object-cover'
-              src={imageSrc}
-              alt={post.mainImage.alt}
-              fill
-              priority
-            />
-          </div>
+    <main className=' text-black mx-auto w-full flex flex-col md:flex-row max-w-7xl'>
+      <article className='mt-3 mx-10 mb-10 max-w-4xl shadow-md	bg-white'>
+        <div className='relative h-[60vh] mb-5 block mx-auto'>
+          <Image
+            className='rounded-t-lg object-cover saturate-150'
+            src={imageSrc}
+            alt={post.mainImage.alt}
+            fill
+            priority
+          />
         </div>
-        <article class='prose lg:prose-xl prose-zinc max-w-4xl mx-auto p-10'>
-          <h1 className='text-4xl md:text-6xl font-bold '>{post.title}</h1>
+
+        <div class='prose md:prose-lg prose-a:text-primary max-w-4xl mx-auto p-10 pt-1'>
+          <Profile post={post} />
+          <h1 className='text-4xl md:text-6xl font-extrabold text-text'>
+            {post.title}
+          </h1>
           <PortableText value={post.body} />
-          {/* <MarkDown content={""} /> */}
-        </article>
-      </div>
+        </div>
+      </article>
+      <aside className='w-1/4 mt-3 hidden md:block'>
+        recent posts: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Laudantium labore aliquam illum, quos quia cumque unde totam fugiat qui,
+        consequuntur beatae ut. Voluptatem tempora tempore natus, nostrum magni
+        non minus.
+      </aside>
     </main>
   );
 }
