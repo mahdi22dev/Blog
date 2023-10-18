@@ -24,7 +24,6 @@ export default function Header() {
             height={100}
             className='mx-auto'
           />
-          {/* nav */}
           <Navbar />
           <ResNavbar res={"md:hidden"} />
         </div>
