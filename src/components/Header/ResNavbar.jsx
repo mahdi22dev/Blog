@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
+import { social_links } from "@/config/social-links";
 export default function ResNavbar({ res }) {
   const { toggle, setToggle } = useGlobalContext();
 
@@ -33,7 +34,25 @@ export default function ResNavbar({ res }) {
         );
       })}
 
-      <div className='p-3'>social</div>
+      <div className='p-3 flex gap-2 justify-center items-center'>
+        {social_links.map((link) => {
+          return (
+            <a
+              href={link.link}
+              target='_blank'
+              className={`cursor-pointer ${
+                link.title == "facebook" && "hover:bg-blue-600"
+              }
+              ${link.title == "twitter" && "hover:bg-blue-400"}
+              ${
+                link.title == "youtube" && "hover:bg-red-500"
+              } p-2 rounded-[100%]`}
+            >
+              {link.icon}
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }
