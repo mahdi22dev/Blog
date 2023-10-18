@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { useGlobalContext } from "@/context/context";
 import Image from "next/image";
+import ResNavbar from "./ResNavbar";
 export default function Header() {
   const { toggle, setToggle } = useGlobalContext();
   return (
@@ -25,6 +26,7 @@ export default function Header() {
           />
           {/* nav */}
           <Navbar />
+          <ResNavbar res={"md:hidden"} />
         </div>
         <Search />
       </nav>

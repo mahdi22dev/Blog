@@ -1,16 +1,16 @@
+"use client";
 import { urlFor } from "@/utils/sanity-utils";
+import { dateFormater } from "@/utils/utils";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Featured({ post, maxw, width }) {
-  console.log(post);
   return (
     <Link
       href={`/post/${post.slug.current}`}
-      className={`overflow-hidden relative max-w-[560px] mx-auto rounded-md`}
+      className={`overflow-hidden relative ${maxw} mx-auto rounded-md`}
     >
       <div
-        className='w-[400px] md:w-[560px] h-[450px] max-w-[560px] bg-green-500 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out '
+        className={`${width} ${maxw} h-[450px] bg-green-500 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
             .width(500)
@@ -24,12 +24,19 @@ export default function Featured({ post, maxw, width }) {
         {/* Dark overlay on hover */}
         <div className='absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-25'></div>
       </div>
-      <div className='z-40 absolute bottom-3 left-3'>
-        <p className=' text-white hover:opacity-90 transition font-bold text-2xl'>
+      <Link
+        href={"/"}
+        className='absolute top-3 left-3 uppercase text-white hover:opacity-90 transition bg-primary py-1 px-1 min-w-[50px] text-center'
+      >
+        {post.categories[0].title}
+      </Link>
+      <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2'>
+        <p className=' text-white hover:opacity-90 transition font-bold text-2xl mt-2'>
           {post.title}
         </p>
         <p className='text-white hover:opacity-90 transition font-thin text-xs mt-2'>
-          {post.authorname}
+          {post.authorname} <span className='mx-2'>-</span>{" "}
+          {dateFormater(post.publishedAt)}
         </p>
       </div>
     </Link>

@@ -16,8 +16,7 @@ export default async function Home({ params }) {
   const imageSrc = urlFor(post.mainImage).width(1000).height(1000).url();
 
   return (
-    <main className='min-h-screen text-black  mx-auto'>
-      <h1 className='text-7xl text-orange-400'>Blog project</h1>
+    <main className=' text-black  mx-auto mx-auto w-full'>
       <div className='mt-10  mx-auto'>
         <div className='relative w-full h-[60vh] mb-5'>
           <Image
