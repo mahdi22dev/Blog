@@ -36,7 +36,7 @@ body {
   transform: translate(-200%, -50%);
   left: 50%;
   text-align: center;
-  @apply flex flex-col gap-12 min-h-screen h-full p-10 pt-20 text-center;
+  @apply flex flex-col justify-start min-h-screen h-full p-10 pt-20 pl-4 text-center;
 }
 .center-close-open {
   position: absolute;
@@ -46,12 +46,12 @@ body {
   text-align: start;
 }
 .open {
-  transform: translate(-100%, -50%);
-  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+  transition: transform 0.9s ease;
 }
 .hide {
   transform: translate(-200%, -50%);
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease;
 }
 
 /* css spinner */
@@ -70,6 +70,7 @@ body {
   background: #dca8a9;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
+
 .lds-ellipsis div:nth-child(1) {
   left: 8px;
   animation: lds-ellipsis1 0.6s infinite;

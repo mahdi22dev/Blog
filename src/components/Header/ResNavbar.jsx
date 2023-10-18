@@ -3,8 +3,8 @@ import { navlinks } from "@/config/nav-links";
 import { useGlobalContext } from "@/context/context";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaWindowClose } from "react-icons/fa";
-
+import { IoClose } from "react-icons/io5";
+import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 export default function ResNavbar({ res }) {
   const { toggle, setToggle } = useGlobalContext();
 
@@ -12,11 +12,11 @@ export default function ResNavbar({ res }) {
     <div
       className={`${res} navbar z-50 ${
         toggle ? "open" : "hide"
-      } w-2/4 bg-white shadow-md rounded `}
+      } w-full bg-primary shadow-md rounded `}
     >
       {toggle ? (
-        <FaWindowClose
-          className=' cursor-pointer flex md:hidden hover:text-primary ml-[100%]'
+        <IoClose
+          className='text-4xl cursor-pointer flex md:hidden text-white hover:opacity-50 absolute top-5 left-2/4'
           onClick={() => setToggle(!toggle)}
         />
       ) : null}
@@ -26,12 +26,14 @@ export default function ResNavbar({ res }) {
           <Link
             key={link.id}
             href={link.link}
-            className='border border-gray-300 font-medium hover:text-primary transition'
+            className='p-3 font-medium text-white hover:opacity-50 transition text-left'
           >
             {link.title}
           </Link>
         );
       })}
+
+      <div className='p-3'>social</div>
     </div>
   );
 }
