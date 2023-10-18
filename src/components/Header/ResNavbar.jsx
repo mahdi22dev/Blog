@@ -16,7 +16,7 @@ export default function ResNavbar({ res }) {
     >
       {toggle ? (
         <FaWindowClose
-          className='center-close-open cursor-pointer flex md:hidden hover:text-primary'
+          className=' cursor-pointer flex md:hidden hover:text-primary ml-[100%]'
           onClick={() => setToggle(!toggle)}
         />
       ) : null}

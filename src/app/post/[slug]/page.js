@@ -13,19 +13,21 @@ export default async function Home({ params }) {
   if (!post) {
     return notFound();
   }
-  const imageSrc = urlFor(post.mainImage).width(1000).height(1000).url();
+  const imageSrc = urlFor(post.mainImage).url();
 
   return (
-    <main className=' text-black  mx-auto mx-auto w-full'>
+    <main className=' text-black  mx-auto  w-full'>
       <div className='mt-10  mx-auto'>
-        <div className='relative w-full h-[60vh] mb-5'>
-          <Image
-            className='rounded-sm object-cover'
-            src={imageSrc}
-            alt={post.mainImage.alt}
-            fill
-            priority
-          />
+        <div className='w-full bg-white'>
+          <div className='relative  h-[60vh] mb-5 block max-w-7xl mx-auto'>
+            <Image
+              className='rounded-sm  object-cover'
+              src={imageSrc}
+              alt={post.mainImage.alt}
+              fill
+              priority
+            />
+          </div>
         </div>
         <article class='prose lg:prose-xl prose-zinc max-w-4xl mx-auto p-10'>
           <h1 className='text-4xl md:text-6xl font-bold '>{post.title}</h1>
