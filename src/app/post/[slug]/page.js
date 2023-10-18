@@ -9,11 +9,12 @@ import RecentPosts from "@/components/Post/RecentPosts";
 
 export default async function Home({ params }) {
   const slug = params.slug;
+
   const query = `
   *[_type == "post" && slug.current == $slug][0] {
     title,
     mainImage,
-body,_createdAt,
+  body,_createdAt,
     author-> {
      image,
      name,
@@ -22,7 +23,6 @@ body,_createdAt,
   }
 `;
   const post = await client.fetch(query, { slug });
-  console.log(post);
   if (!post) {
     return notFound();
   }

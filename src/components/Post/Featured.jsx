@@ -40,7 +40,7 @@ export default function Featured({ post, maxw, width }) {
 
         <p className='text-white hover:opacity-90 transition font-thin text-xs mt-2'>
           {post.authorname} <span className='mx-2'>-</span>{" "}
-          {dateFormater(post.publishedAt)}
+          {dateFormater(post._createdAt)}
         </p>
       </div>
     </Link>
