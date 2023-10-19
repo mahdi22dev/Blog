@@ -2,9 +2,7 @@
 import { navlinks } from "@/config/nav-links";
 import { useGlobalContext } from "@/context/context";
 import Link from "next/link";
-import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
-import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 import { social_links } from "@/config/social-links";
 export default function ResNavbar({ res }) {
   const { toggle, setToggle } = useGlobalContext();
