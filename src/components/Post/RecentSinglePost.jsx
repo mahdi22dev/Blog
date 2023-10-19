@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default async function RecentSinglePost({ post }) {
   const imageSrc = urlFor(post.mainImage).width(300).height(300).url();
-  console.log(post);
   return (
     <div className='w-full '>
       <Link href={`/post/${post.slug.current}`} className='flex gap-2 group '>

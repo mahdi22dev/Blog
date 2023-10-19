@@ -6,10 +6,13 @@ const AppProvider = ({ children }) => {
   const pathname = usePathname();
   const [toggle, setToggle] = useState(false);
   const [highlight, sethighlight] = useState(pathname);
-  console.log(pathname);
+
   useEffect(() => {
+    if (pathname.includes("post")) {
+      sethighlight("/blog");
+      return;
+    }
     sethighlight(pathname);
-    console.log("route changed");
   }, [pathname]);
 
   return (

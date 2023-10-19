@@ -8,9 +8,7 @@ export default async function RecentPosts() {
   try {
     const query = `*[_type == "post"] { _id, title, mainImage, categories[]-> { title}, slug, _createdAt ,"authorname": author->name } | order(_createdAt desc) [0..4]`;
     posts = await client.fetch(query);
-    console.log(posts);
   } catch (error) {
-    console.log(error);
     throw new Error(error);
   }
   return (
