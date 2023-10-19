@@ -17,7 +17,7 @@ export default async function RecentSinglePost({ post }) {
         />
         <div className='font-bold flex gap-1 flex-col'>
           <p className='text-xs opacity-40'>{dateFormater(post._createdAt)}</p>
-          <p className='hover:text-primary transition-colors group-hover:text-primary'>
+          <p className='text-[14px] hover:text-primary transition-colors group-hover:text-primary'>
             {post.title}
           </p>
         </div>

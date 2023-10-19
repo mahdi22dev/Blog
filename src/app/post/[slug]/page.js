@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { urlFor } from "@/utils/sanity-utils";
 import Profile from "@/components/Post/Profile";
 import RecentPosts from "@/components/Post/RecentPosts";
+import Tags from "@/components/Post/Tags";
 
 export default async function Home({ params }) {
   const slug = params.slug;
@@ -30,7 +31,7 @@ export default async function Home({ params }) {
 
   return (
     <main className=' text-black mx-auto w-full flex flex-col lg:flex-row max-w-[85rem]'>
-      <article className='mt-3 mx-10 mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
+      <article className='mt-3 mx-10 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
         <div className='relative h-[60vh] mb-5 block mx-auto'>
           <Image
             className='rounded-t-lg object-cover saturate-150'
@@ -47,6 +48,7 @@ export default async function Home({ params }) {
             {post.title}
           </h1>
           <PortableText value={post.body} />
+          <Tags tags={"office"} />
         </div>
       </article>
       <RecentPosts />
