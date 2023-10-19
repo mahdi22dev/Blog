@@ -7,7 +7,7 @@ export default async function page() {
   const posts = await client.fetch(query);
 
   return (
-    <main className='mx-auto w-full max-w-7xl p-3'>
+    <main className='mx-auto w-full max-w-7xl p-3 min-h-screen'>
       {/* featured */}
       <section className='mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1'>
         <Featured

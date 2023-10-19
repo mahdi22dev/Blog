@@ -78,6 +78,15 @@ body {
   @apply w-[30px];
 }
 
+.fancy-link {
+  @apply bg-left-bottom	bg-[length:0%_3px] bg-no-repeat transition-[background-size] duration-500 ease-out no-underline;
+  background-image: linear-gradient(#dca8a9, #dca8a9);
+}
+
+.fancy-link:hover {
+  @apply bg-[length:100%_3px];
+}
+
 /* css spinner */
 .lds-ellipsis {
   display: inline-block;

@@ -7,7 +7,7 @@ export default function Featured({ post, maxw, width }) {
   return (
     <Link
       href={`/post/${post.slug.current}`}
-      className={`overflow-hidden relative ${maxw} mx-auto rounded-md`}
+      className={`overflow-hidden relative ${maxw} mx-auto rounded-md group`}
     >
       <div
         className={`${width} ${maxw} h-[450px] bg-green-500 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out`}
@@ -31,12 +31,17 @@ export default function Featured({ post, maxw, width }) {
         {post.categories[0].title}
       </Link>
       <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2 '>
-        <p
-          class='leading-9 text-white hover:opacity-90  font-bold text-2xl mt-2 bg-gradient-to-r from-red-200 via-red-200 to-red-200 bg-[length:0%_5px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_5px] transition-all duration-500
+        <a
+          href={`/post/${post.slug.current}`}
+          class='fancy-link leading-9 text-white hover:opacity-90 font-bold text-2xl mt-2 group-hover:bg-[length:100%_3px]
         '
         >
           {post.title}
-        </p>
+        </a>
+        {/* <a className='fancy-link'>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
+          praesentium veniam.
+        </a> */}
 
         <p className='text-white hover:opacity-90 transition font-thin text-xs mt-2'>
           {post.authorname} <span className='mx-2'>-</span>{" "}
