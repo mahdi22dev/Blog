@@ -1,7 +1,28 @@
-export default async function RecentSinglePost() {
+import Image from "next/image";
+import { urlFor } from "@/utils/sanity-utils";
+import { dateFormater } from "@/utils/utils";
+import Link from "next/link";
+
+export default async function RecentSinglePost({ post }) {
+  const imageSrc = urlFor(post.mainImage).width(300).height(300).url();
+  console.log(post);
   return (
-    <div className='flex justify-center items-center w-full'>
-      {/* <Image/> */}
+    <div className='w-full '>
+      <Link href={`/post/${post.slug.current}`} className='flex gap-2 group '>
+        <Image
+          src={imageSrc}
+          alt={post?.mainimage?.alt || "image"}
+          width={100}
+          height={100}
+          className='rounded-xl max-h-[100px] '
+        />
+        <div className='text-xs xl:text-base font-bold flex gap-1 flex-col'>
+          <p className='text-xs opacity-40'>{dateFormater(post._createdAt)}</p>
+          <p className='hover:text-primary transition-colors group-hover:text-primary'>
+            {post.title}
+          </p>
+        </div>
+      </Link>
     </div>
   );
 }
