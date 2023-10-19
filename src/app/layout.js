@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${roboto.className}`}>
-        <NextTopLoader color='#dca8a9' />
+        <NextTopLoader color='#dca8a9' height={5} />
         <AppProvider>
           <div className='h-[2px] bg-gray-200'></div>
           <Header />

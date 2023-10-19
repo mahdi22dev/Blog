@@ -47,7 +47,7 @@ export default function ResNavbar({ res }) {
               ${link.title == "twitter" && "hover:bg-blue-400"}
               ${
                 link.title == "youtube" && "hover:bg-red-500"
-              } p-2 rounded-[100%]`}
+              } p-2 rounded-[100%] transition-colors duration-300`}
             >
               {link.icon}
             </a>
