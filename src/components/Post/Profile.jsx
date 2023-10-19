@@ -6,7 +6,7 @@ export default function Profile({ post }) {
   return (
     <div className='flex justify-start items-center gap-2'>
       <img
-        src={urlFor(post.author.image).url()}
+        src={urlFor(post.author.image).width(50).height(50).url()}
         alt={post.author.image.alt}
         className='rounded-[100%] w-11 h-11 '
       />

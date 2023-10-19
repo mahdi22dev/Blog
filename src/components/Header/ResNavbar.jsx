@@ -39,6 +39,7 @@ export default function ResNavbar({ res }) {
         {social_links.map((link) => {
           return (
             <a
+              key={link.id}
               href={link.link}
               target='_blank'
               className={`cursor-pointer ${
