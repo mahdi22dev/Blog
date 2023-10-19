@@ -29,7 +29,7 @@ export default async function Home({ params }) {
   const imageSrc = urlFor(post.mainImage).url();
 
   return (
-    <main className=' text-black mx-auto w-full flex flex-col lg:flex-row max-w-7xl'>
+    <main className=' text-black mx-auto w-full flex flex-col lg:flex-row max-w-[85rem]'>
       <article className='mt-3 mx-10 mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
         <div className='relative h-[60vh] mb-5 block mx-auto'>
           <Image
