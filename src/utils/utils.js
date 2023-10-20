@@ -4,3 +4,7 @@ export const dateFormater = (date) => {
   const fromatedDate = moment(date).format("MMMM Do, YYYY");
   return fromatedDate;
 };
+
+export const Generatesharelink = (title) => {
+  return title;
+};

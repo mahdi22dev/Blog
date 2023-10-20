@@ -8,6 +8,7 @@ import Profile from "@/components/Post/Profile";
 import RecentPosts from "@/components/Post/RecentPosts";
 import Tags from "@/components/Post/Tags";
 import Dotted from "@/components/Post/Dotted";
+import Share from "@/components/Post/Share";
 
 export default async function Home({ params }) {
   const slug = params.slug;
@@ -54,7 +55,7 @@ export default async function Home({ params }) {
           <div className='w-14 h-1 bg-primary mb-3'></div>
           <Tags tags={"office"} />
           <Dotted />
-          <div>share</div>
+          <Share />
           <Dotted />
         </div>
       </article>
