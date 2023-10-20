@@ -2,6 +2,8 @@ import React from "react";
 import RecentDivider from "./RecentDivider";
 import RecentSinglePost from "./RecentSinglePost";
 import { client } from "../../../sanity/lib/client";
+import GlobalTags from "./GlobalTags";
+import RecentPostsHeader from "./RecentPostsHeader";
 
 export default async function RecentPosts() {
   let posts = [];
@@ -13,13 +15,14 @@ export default async function RecentPosts() {
   }
   return (
     <aside className='w-1/4 mt-3 hidden lg:block h-full mr-3 sticky top-3'>
-      <h3 className='font-bold text-2xl'>Recent Articles</h3>
+      <RecentPostsHeader text={"Recent Articles"} />
       <RecentDivider />
       <div className='flex justify-start items-center flex-col gap-4 mt-8'>
         {posts.map((post) => {
           return <RecentSinglePost key={post._id} post={post} />;
         })}
       </div>
+      <GlobalTags />
     </aside>
   );
 }

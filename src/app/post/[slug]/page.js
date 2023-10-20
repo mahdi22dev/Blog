@@ -83,9 +83,11 @@ export default async function Home({ params }) {
           <Dotted />
           <Share title={post.title} />
           <Dotted />
+          <div>navigation</div>
+          <Dotted />
+          <div>profile</div>
         </div>
       </article>
-
       <RecentPosts />
     </main>
   );

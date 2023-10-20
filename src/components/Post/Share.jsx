@@ -6,9 +6,12 @@ import { AiOutlineShareAlt } from "react-icons/ai";
 
 export default function Share({ title }) {
   return (
-    <div className='py-3 flex justify-between items-center'>
-      <AiOutlineShareAlt className='text-[28px] gap-2' />
-      <div className='flex '>
+    <div className='p-1 flex justify-between items-center'>
+      <div className='flex justify-center items-center gap-2 max-h-[50px]'>
+        <AiOutlineShareAlt className='text-[28px] gap-2' />
+        <p>Share</p>
+      </div>
+      <div className='flex flex-wrap sm:flex-nowrap w-3/4 justify-end '>
         {social_share.map((link) => {
           const sharlink = Generatesharelink(link, title);
           return (
