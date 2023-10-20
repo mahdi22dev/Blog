@@ -50,6 +50,7 @@ export default function GlobalTags() {
               <Link
                 className={`p-1 shadow-md bg-white transition-all text-[#${color}]`}
                 href={`/tags/${tag.title}`}
+                key={tag?.color}
               >
                 <span style={{ color: `#${color}` }}>#</span> {tag.title}
               </Link>
