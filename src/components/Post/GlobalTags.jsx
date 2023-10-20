@@ -27,6 +27,7 @@ export default function GlobalTags() {
       throw new Error(error);
     }
   }, []);
+
   return (
     <div className=''>
       <div className='flex justify-start items-center mt-5'>
@@ -48,7 +49,7 @@ export default function GlobalTags() {
             console.log(color);
             return (
               <Link
-                className={`p-1 shadow-md bg-white transition-all text-[#${color}]`}
+                className={`p-1 shadow-md bg-white transition-all text-text text-{${color}}`}
                 href={`/tags/${tag.title}`}
                 key={tag?.color}
               >

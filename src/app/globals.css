@@ -53,6 +53,10 @@ body {
   transform: translate(-200%, -50%);
   transition: transform 0.9s ease;
 }
+/* center */
+.center {
+  @apply flex justify-center items-center;
+}
 /* 1 */
 .underlineanimation {
   @apply relative;

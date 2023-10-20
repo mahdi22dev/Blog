@@ -8,7 +8,7 @@ import RecentPostsHeader from "./RecentPostsHeader";
 export default async function RecentPosts() {
   let posts = [];
   try {
-    const query = `*[_type == "post"] { _id, title, mainImage, categories[]-> { title}, slug, _createdAt ,"authorname": author->name } | order(_createdAt desc) [0..4]`;
+    const query = `*[_type == "post"] { _id, title, mainImage, categories[]-> {title}, slug, _createdAt ,"authorname": author->name } | order(_createdAt desc) [0..4]`;
     posts = await client.fetch(query);
   } catch (error) {
     throw new Error(error);
