@@ -10,9 +10,35 @@ import Tags from "@/components/Post/Tags";
 import Dotted from "@/components/Post/Dotted";
 import Share from "@/components/Post/Share";
 
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
+  const query = `
+  *[_type == "post" && slug.current == $slug][0] {
+    title,
+    mainImage,
+  body,_createdAt,
+    author-> {
+     image,
+     name,
+     slug
+    }
+  }
+`;
+  const post = await client.fetch(query, { slug });
+  if (!post) {
+    return notFound();
+  }
+  return {
+    title: post.title,
+    description: post.title,
+    openGraph: {
+      images: [urlFor(post.mainImage).width(500).width(500).url()],
+    },
+  };
+}
+
 export default async function Home({ params }) {
   const slug = params.slug;
-
   const query = `
   *[_type == "post" && slug.current == $slug][0] {
     title,
@@ -55,7 +81,7 @@ export default async function Home({ params }) {
           <div className='w-14 h-1 bg-primary mb-3'></div>
           <Tags tags={"office"} />
           <Dotted />
-          <Share />
+          <Share title={post.title} />
           <Dotted />
         </div>
       </article>
