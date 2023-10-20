@@ -47,7 +47,7 @@ export default function Share({ title, slug }) {
             navigator.clipboard.writeText(
               `https://blog-website-m.vercel.app/post/${slug}`
             );
-            notifySuccess("post link copied yo your clipboard");
+            notifySuccess("link copied to your clipboard");
           }}
         >
           {copy.icon}

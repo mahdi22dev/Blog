@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Zoom } from "react-toastify";
 export const notifySuccess = (message) =>
   toast.success(message, {
     position: "top-right",
@@ -9,5 +10,6 @@ export const notifySuccess = (message) =>
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: "dark",
+    theme: "light",
+    transition: Zoom,
   });
