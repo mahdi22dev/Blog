@@ -34,12 +34,8 @@ export default function GlobalTags() {
         <RecentPostsHeader text={"Tags"} />
       </div>
       <RecentDivider />
-      <div className='mt-4 flex flex-wrap md:w-2/3 lg:w-4/4 max-w-max gap-2 py-3'>
-        {Array.from({ length: 6 }).map((index) => {
-          return <TagsSkeleton key={index} />;
-        })}
-      </div>
-      {/* {loading ? (
+
+      {loading ? (
         <div className='mt-4 flex flex-wrap md:w-2/3 lg:w-4/4 max-w-max gap-2 py-3'>
           {Array.from({ length: 6 }).map((index) => {
             return <TagsSkeleton key={index} />;
@@ -60,7 +56,7 @@ export default function GlobalTags() {
             );
           })}
         </div>
-      )} */}
+      )}
     </div>
   );
 }
