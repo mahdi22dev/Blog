@@ -4,13 +4,13 @@ import { client } from "../../../../sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import { urlFor } from "@/utils/sanity-utils";
-import Profile from "@/components/Post/Profile";
+import Profile from "@/components/Post/Author/Profile";
 import RecentPosts from "@/components/Post/RecentPosts";
 import Tags from "@/components/Post/Tags";
 import Dotted from "@/components/Post/Dotted";
 import Share from "@/components/Post/Share";
 import NavigateToPosts from "@/components/Post/NavigateToPosts";
-import AuthorInfo from "@/components/Post/AuthorInfo";
+import AuthorInfo from "@/components/Post/Author/AuthorInfo";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -98,6 +98,7 @@ export default async function Home({ params }) {
           </div>
         </article>
         <AuthorInfo info={post?.author} />
+        <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'></div>
       </div>
       <RecentPosts />
     </main>

@@ -2,12 +2,12 @@ import { urlFor } from "@/utils/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import React from "react";
-import AuthorsocialLinks from "./AuthorsocialLinks";
+import AuthorsocialLinks from "../Author/AuthorsocialLinks";
 
 export default function AuthorInfo({ info }) {
   const authorPage = `/author/${info.slug}`;
   return (
-    <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
+    <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw] bg-white'>
       <AuthorsocialLinks info={""} />
       <div className='flex justify-center items-start gap-4'>
         <div>
@@ -32,10 +32,10 @@ export default function AuthorInfo({ info }) {
       <div className='text-center mt-4 mx-auto max-w-[500px]'>
         <PortableText value={info.bio} />
       </div>
-      <div className='flex justify-center items-center w-full absolute -bottom-4 '>
-        <button className='mt-3 mx-auto btn_animation text-xs'>
+      <div className='flex justify-center items-center w-full absolute -bottom-6 '>
+        <Link href={"/author"} className='mt-3 mx-auto btn_animation text-xs'>
           <span> View All Articles</span>
-        </button>
+        </Link>
       </div>
     </div>
   );

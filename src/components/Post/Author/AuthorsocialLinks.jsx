@@ -7,7 +7,7 @@ export default function AuthorsocialLinks({ info }) {
       {author_social.map((icon) => {
         return (
           <>
-            <Tooltip id='my-tooltip' />
+            <Tooltip id='my-tooltip' className='bg-primary' />
             <a
               key={icon.id}
               data-tooltip-id='my-tooltip'
