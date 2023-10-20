@@ -12,7 +12,7 @@ export default async function RecentPosts() {
     throw new Error(error);
   }
   return (
-    <aside className='w-1/4 mt-3 hidden md:block h-full mr-3 sticky top-3'>
+    <aside className='w-1/4 mt-3 hidden lg:block h-full mr-3 sticky top-3'>
       <h3 className='font-bold text-2xl'>Recent Articles</h3>
       <RecentDivider />
       <div className='flex justify-start items-center flex-col gap-4 mt-8'>

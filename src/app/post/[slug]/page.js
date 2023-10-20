@@ -68,7 +68,7 @@ export default async function Home({ params }) {
             fill
             priority
           />
-          <div className='absolute bottom-0 left-0 right-0 top-0 w-[99%] h-[99%] mx-auto my-auto border-white border-2 z-[1000]'></div>
+          <div className='absolute bottom-0 left-0 right-0 top-0 w-[99%] h-[99%] mx-auto my-auto border-white border-2'></div>
         </div>
 
         <div class='prose md:prose-lg prose-a:text-primary max-w-4xl mx-auto p-10 pt-1'>
