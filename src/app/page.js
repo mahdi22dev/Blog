@@ -1,6 +1,6 @@
 import React from "react";
 import { client } from "../../sanity/lib/client";
-import Featured from "@/components/Post/Featured";
+import Featured from "@/components/Home/Featured";
 
 export default async function page() {
   const query = `*[_type == "post"] { _id, title, mainImage, categories[]-> { title}, slug, _createdAt ,"authorname": author->name } | order(_createdAt desc) [0..2]`;

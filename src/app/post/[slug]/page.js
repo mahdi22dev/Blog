@@ -34,12 +34,13 @@ export default async function Home({ params }) {
       <article className='mt-3 mx-10 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
         <div className='relative h-[60vh] mb-5 block mx-auto'>
           <Image
-            className='rounded-t-lg object-cover saturate-150'
+            className=' object-cover saturate-150'
             src={imageSrc}
             alt={post.mainImage.alt}
             fill
             priority
           />
+          <div className='absolute bottom-0 left-0 right-0 top-0 w-[99%] h-[99%] mx-auto my-auto border-white border-2 z-[1000]'></div>
         </div>
 
         <div class='prose md:prose-lg prose-a:text-primary max-w-4xl mx-auto p-10 pt-1'>
@@ -48,9 +49,12 @@ export default async function Home({ params }) {
             {post.title}
           </h1>
           <PortableText value={post.body} />
+          {/* small divivder */}
+          <div className='w-14 h-1 bg-primary mb-3'></div>
           <Tags tags={"office"} />
         </div>
       </article>
+
       <RecentPosts />
     </main>
   );
