@@ -46,7 +46,8 @@ export default async function Home({ params }) {
   *[_type == "post" && slug.current == $slug][0] {
     title,
     mainImage,
-  body,_createdAt,
+    categories[]-> {title},
+    body,_createdAt,
     author-> {
      image,
      name,
@@ -55,6 +56,7 @@ export default async function Home({ params }) {
   }
 `;
     post = await client.fetch(query, { slug });
+    console.log(post);
     if (!post) {
       return notFound();
     }
@@ -86,7 +88,7 @@ export default async function Home({ params }) {
             <PortableText value={post.body} />
             {/* small divivder */}
             <div className='w-14 h-1 bg-primary mb-3'></div>
-            <Tags tags={"office"} />
+            <Tags tags={post?.categories[0]?.title} />
             <Dotted />
             <Share title={post.title} slug={slug} />
             <Dotted />
