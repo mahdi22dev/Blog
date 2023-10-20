@@ -5,7 +5,7 @@ import { client } from "../../../sanity/lib/client";
 import RecentPostsHeader from "./RecentPostsHeader";
 import RecentDivider from "./RecentDivider";
 import { LiaHashtagSolid } from "react-icons/lia";
-import TagsSkeleton from "../Loading/tagsSkeleton";
+import TagsSkeleton from "../Loading/TagsSkeleton";
 
 export default function GlobalTags() {
   const [tags, setTags] = useState([]);
