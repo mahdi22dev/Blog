@@ -5,6 +5,7 @@ import { Generatesharelink } from "@/utils/utils";
 import React from "react";
 import {} from "react-icons/ai";
 import { AiOutlineShareAlt, AiOutlineCopy } from "react-icons/ai";
+import { Tooltip } from "react-tooltip";
 
 const copy = {
   id: 5,
@@ -16,6 +17,8 @@ const copy = {
 export default function Share({ title, slug }) {
   return (
     <div className='p-1 flex justify-between items-center'>
+      <Tooltip id='my-tooltip' />
+      <Tooltip id='copy-tooltip' />
       <div className='flex justify-center items-center gap-2 max-h-[50px]'>
         <AiOutlineShareAlt className='text-[28px] gap-2' />
         <p>Share</p>
@@ -25,6 +28,8 @@ export default function Share({ title, slug }) {
           const sharlink = Generatesharelink(link, title, slug);
           return (
             <a
+              data-tooltip-id='my-tooltip'
+              data-tooltip-content={link.title}
               key={link.id}
               href={sharlink}
               target='_blank'
@@ -42,7 +47,9 @@ export default function Share({ title, slug }) {
           );
         })}
         <button
-          className='cursor-pointer ml-2 transition-all duration-500 hover:opacity-70 p-2 rounded-[100%] bg-black '
+          className='cursor-pointer ml-2 transition-all duration-500 hover:opacity-70 p-2 rounded-[100%] bg-black'
+          data-tooltip-id='copy-tooltip'
+          data-tooltip-content={"copy post link"}
           onClick={() => {
             navigator.clipboard.writeText(
               `https://blog-website-m.vercel.app/post/${slug}`

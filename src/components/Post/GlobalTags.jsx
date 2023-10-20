@@ -15,7 +15,6 @@ export default function GlobalTags() {
     setLoading(true);
     const query = "*[_type == 'category'] {title,color}";
     const tagslist = await client.fetch(query);
-    console.log(tagslist);
     setTags(tagslist);
     setLoading(false);
   };
@@ -46,10 +45,10 @@ export default function GlobalTags() {
         <div className='mt-4 flex flex-wrap md:w-2/3 lg:w-4/4 max-w-max gap-2 py-3'>
           {tags.map((tag) => {
             const color = (tag?.color || "#873D48").toLowerCase();
-            console.log(color);
+
             return (
               <Link
-                className={`p-1 shadow-md bg-white transition-all text-text text-{${color}}`}
+                className={`p-1 shadow-md bg-white transition-all hover:scale-110 duration-300`}
                 href={`/tags/${tag.title}`}
                 key={tag?.color}
               >

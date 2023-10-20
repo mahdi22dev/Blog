@@ -10,6 +10,7 @@ import Tags from "@/components/Post/Tags";
 import Dotted from "@/components/Post/Dotted";
 import Share from "@/components/Post/Share";
 import NavigateToPosts from "@/components/Post/NavigateToPosts";
+import AuthorInfo from "@/components/Post/AuthorInfo";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -51,7 +52,8 @@ export default async function Home({ params }) {
     author-> {
      image,
      name,
-     slug
+     slug,
+     bio
     }
   }
 `;
@@ -95,9 +97,7 @@ export default async function Home({ params }) {
             <NavigateToPosts date={post._createdAt} />
           </div>
         </article>
-        <div className='p-4 mt-3 mx-10 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
-          profile
-        </div>
+        <AuthorInfo info={post?.author} />
       </div>
       <RecentPosts />
     </main>
