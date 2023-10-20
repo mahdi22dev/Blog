@@ -7,6 +7,7 @@ import { urlFor } from "@/utils/sanity-utils";
 import Profile from "@/components/Post/Profile";
 import RecentPosts from "@/components/Post/RecentPosts";
 import Tags from "@/components/Post/Tags";
+import Dotted from "@/components/Post/Dotted";
 
 export default async function Home({ params }) {
   const slug = params.slug;
@@ -52,6 +53,9 @@ export default async function Home({ params }) {
           {/* small divivder */}
           <div className='w-14 h-1 bg-primary mb-3'></div>
           <Tags tags={"office"} />
+          <Dotted />
+          <div>share</div>
+          <Dotted />
         </div>
       </article>
 
