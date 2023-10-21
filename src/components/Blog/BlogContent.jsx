@@ -48,6 +48,7 @@ const BlogContent = () => {
           {data.map((post) => {
             return (
               <Featured
+                key={post.slug}
                 post={post}
                 width={""}
                 maxw={""}
