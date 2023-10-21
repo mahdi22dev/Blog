@@ -19,6 +19,9 @@ module.exports = {
         secondary: "#e3ceba",
         accent: "#94673d",
       },
+      screens: {
+        lg: "1440px",
+      },
     },
   },
   plugins: [

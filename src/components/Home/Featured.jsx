@@ -3,11 +3,12 @@ import { urlFor } from "@/utils/sanity-utils";
 import { dateFormater } from "@/utils/utils";
 import Link from "next/link";
 
-export default function Featured({ post, maxw, width }) {
+export default function Featured({ post, maxw, width, className }) {
+  console.log(post);
   return (
     <Link
-      href={`/post/${post.slug.current}`}
-      className={`overflow-hidden relative ${maxw} mx-auto rounded-md group`}
+      href={`/post/${post.slug}`}
+      className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md`}
     >
       <div
         className={`${width} ${maxw} h-[450px] bg-green-500 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out`}
@@ -38,11 +39,6 @@ export default function Featured({ post, maxw, width }) {
         >
           {post.title}
         </a>
-        {/* <a className='fancy-link'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
-          praesentium veniam.
-        </a> */}
-
         <p className='text-white hover:opacity-90 transition font-thin text-xs mt-2'>
           {post.authorname} <span className='mx-2'>-</span>{" "}
           {dateFormater(post._createdAt)}
