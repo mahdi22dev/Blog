@@ -12,7 +12,7 @@ export default function AuthorsocialLinks({ info }) {
               key={icon.id}
               data-tooltip-id='my-tooltip'
               data-tooltip-content={icon.title}
-              className={`text-xs sm:text-base cursor-pointer ml-2 transition-all duration-500 hover:opacity-70 p-2 rounded-[100%] ${
+              className={`cursor-pointer ml-2 transition-all duration-500 hover:opacity-70 p-2 rounded-[100%] ${
                 icon.title == "facebook" && "bg-blue-700"
               }
               ${icon.title == "twitter" && "bg-blue-400 hover:opacity-80"}

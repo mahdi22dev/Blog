@@ -34,7 +34,7 @@ export default function Share({ title, slug }) {
               href={sharlink}
               target='_blank'
               rel='noopener noreferrer'
-              className={`cursor-pointer ml-2 transition-all duration-500 hover:opacity-70  p-2 rounded-[100%]
+              className={`cursor-pointer ml-2 transition-all duration-500 hover:opacity-70 p-2 rounded-[100%]
               ${link.title == "facebook" && "bg-blue-700"}
               ${link.title == "twitter" && "bg-blue-400 hover:opacity-80"}
               ${link.title == "whatsApp" && "bg-green-500 hover:opacity-80"}
