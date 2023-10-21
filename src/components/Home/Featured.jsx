@@ -7,10 +7,10 @@ export default function Featured({ post, maxw, width, className }) {
   return (
     <Link
       href={`/post/${post.slug}`}
-      className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md`}
+      className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md mb-4 md:mb-auto`}
     >
       <div
-        className={`${width} ${maxw} h-[450px] bg-gray-200 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out`}
+        className={`${width} ${maxw} h-[450px] relative brightness-[75%] group-hover:scale-110 transition-transform duration-500 ease-out`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
             .width(500)
@@ -18,10 +18,10 @@ export default function Featured({ post, maxw, width, className }) {
             .url()}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: " saturate(200%)",
+          filter: "brightness(80%) saturate(200%)",
         }}
       >
-        <div className='absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-25'></div>
+        <div className='absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group'></div>
       </div>
       <Link
         href={"/"}

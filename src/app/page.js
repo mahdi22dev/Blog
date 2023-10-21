@@ -1,6 +1,7 @@
 import React from "react";
 import { client } from "../../sanity/lib/client";
 import Featured from "@/components/Home/Featured";
+import OurTags from "@/components/Home/OurTags";
 
 export default async function page() {
   const query = `*[_type == "post"] { _id, title, mainImage, categories[]-> { title}, "slug":slug.current, _createdAt ,"authorname": author->name } | order(_createdAt desc) [0..2]`;
@@ -9,7 +10,7 @@ export default async function page() {
   return (
     <main className='mx-auto w-full max-w-7xl p-3 min-h-screen'>
       {/* featured */}
-      <section className='mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1'>
+      <section className='mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1 mb-10'>
         <Featured
           post={posts[0]}
           width={"w-[80vw] md:w-[600px]"}
@@ -26,6 +27,7 @@ export default async function page() {
           maxw={"max-w-[560px]"}
         />
       </section>
+      <OurTags />
     </main>
   );
 }

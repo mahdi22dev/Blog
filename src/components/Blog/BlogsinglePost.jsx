@@ -3,8 +3,6 @@ import { dateFormater } from "@/utils/utils";
 import Link from "next/link";
 
 export default function BlogsinglePost({ post, maxw, width }) {
-  console.log(post);
-
   return (
     <Link
       href={`/post/${post.slug}`}
