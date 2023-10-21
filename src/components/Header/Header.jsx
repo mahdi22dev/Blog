@@ -6,6 +6,7 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { useGlobalContext } from "@/context/context";
 import Image from "next/image";
 import ResNavbar from "./ResNavbar";
+import Link from "next/link";
 export default function Header() {
   const { toggle, setToggle } = useGlobalContext();
   return (
@@ -17,13 +18,14 @@ export default function Header() {
         />
         {/* navbar */}
         <div className='w-full'>
-          <Image
-            src={"/logo.png"}
-            alt='website logo'
-            width={150}
-            height={100}
-            className='mx-auto'
-          />
+          <Link
+            href={"/"}
+            className='text-5xl font-bold w-full text-center mb-4 uppercase'
+          >
+            <p className='text-5xl font-bold w-full text-center mb-4 uppercase'>
+              <span className='text-primary'> D</span>aily Life
+            </p>
+          </Link>
           <Navbar />
           <ResNavbar res={"md:hidden"} />
         </div>

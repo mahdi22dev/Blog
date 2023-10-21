@@ -5,7 +5,6 @@ import React from "react";
 import AuthorsocialLinks from "../Author/AuthorsocialLinks";
 
 export default function AuthorInfo({ info }) {
-  const authorPage = `/author/${info.slug}`;
   return (
     <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw] bg-white'>
       <AuthorsocialLinks info={""} />

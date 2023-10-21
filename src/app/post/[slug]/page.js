@@ -11,6 +11,7 @@ import Dotted from "@/components/Post/Dotted";
 import Share from "@/components/Post/Share";
 import NavigateToPosts from "@/components/Post/NavigateToPosts";
 import AuthorInfo from "@/components/Post/Author/AuthorInfo";
+import RelatedArticles from "@/components/Post/RelatedArticles";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -58,7 +59,6 @@ export default async function Home({ params }) {
   }
 `;
     post = await client.fetch(query, { slug });
-    console.log(post);
     if (!post) {
       return notFound();
     }
@@ -98,7 +98,10 @@ export default async function Home({ params }) {
           </div>
         </article>
         <AuthorInfo info={post?.author} />
-        <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'></div>
+        {/* <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
+          i may add a comment section later
+        </div> */}
+        <RelatedArticles />
       </div>
       <RecentPosts />
     </main>

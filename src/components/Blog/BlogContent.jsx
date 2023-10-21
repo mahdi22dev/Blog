@@ -24,7 +24,6 @@ const BlogContent = () => {
 
   return (
     <div className=''>
-      <h1>blog posts</h1>
       {loading ? (
         <div className='grid grid-cols-3 gap-3'>
           {Array.from({ length: 6 }).map((index) => {
