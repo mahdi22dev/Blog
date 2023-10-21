@@ -17,7 +17,7 @@ export default async function RelatedArticles() {
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 py-2 gap-4 mt-3 '>
         {posts.map((post) => {
-          return <RelatedArticlesSingle post={post} />;
+          return <RelatedArticlesSingle key={post.slug} post={post} />;
         })}
       </div>
     </div>
