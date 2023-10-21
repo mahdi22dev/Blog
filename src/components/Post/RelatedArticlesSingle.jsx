@@ -20,9 +20,9 @@ export default function RelatedArticlesSingle({ post }) {
           className='rounded-md max-h-[100px] mr-2 hover:scale-110 transition-all '
         />
         <div className='font-bold flex gap-1 justify-between flex-col py-4 pl-2 pr-4'>
-          <p className='text-[14px] hover:text-primary transition-colors group-hover:text-primary'>
+          <a className='text-[14px] hover:text-primary transition-colors group-hover:text-primary '>
             {post.title}
-          </p>
+          </a>
           <p className='text-xs opacity-40'>{dateFormater(post._createdAt)}</p>
         </div>
       </Link>
