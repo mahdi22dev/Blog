@@ -84,7 +84,7 @@ const BlogContent = () => {
               <span>Load More</span>
             </button>
           ) : (
-            <p>no more posts show</p>
+            <p>no more posts to show</p>
           )}
         </div>
       )}
