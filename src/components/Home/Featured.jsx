@@ -4,14 +4,13 @@ import { dateFormater } from "@/utils/utils";
 import Link from "next/link";
 
 export default function Featured({ post, maxw, width, className }) {
-  console.log(post);
   return (
     <Link
       href={`/post/${post.slug}`}
       className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md`}
     >
       <div
-        className={`${width} ${maxw} h-[450px] bg-green-500 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out`}
+        className={`${width} ${maxw} h-[450px] bg-gray-200 relative hover:scale-110 hover:opacity- transition-transform duration-500 ease-out`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
             .width(500)
@@ -22,14 +21,13 @@ export default function Featured({ post, maxw, width, className }) {
           filter: " saturate(200%)",
         }}
       >
-        {/* Dark overlay on hover */}
         <div className='absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-25'></div>
       </div>
       <Link
         href={"/"}
         className='absolute top-3 left-3 uppercase text-white hover:opacity-90 transition bg-primary py-1 px-1 min-w-[50px] text-center'
       >
-        {post.categories[0].title}
+        {post?.categories?.[0]?.title || "general"}
       </Link>
       <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2 '>
         <a
