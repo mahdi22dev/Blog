@@ -10,15 +10,20 @@ let end = 5;
 const BlogContent = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [paginationLoading, setPaginationLoading] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   const PaginationFetch = async (start, end) => {
-    console.log(start, end);
+    setPaginationLoading(true);
     const query =
       '*[_type == "post"]{ _id, title, mainImage,"slug":slug.current,categories[]->{title},_createdAt, "authorname": author->name }[$start..$end]';
     const posts = await client.fetch(query, { start, end });
     const oldData = [...data, ...posts];
     setData(oldData);
-    console.log(posts);
+    if (posts.length == 0) {
+      setShowMore(false);
+    }
+    setPaginationLoading(false);
   };
 
   const fetchClient = async () => {
@@ -58,19 +63,31 @@ const BlogContent = () => {
           })}
         </div>
       )}
-      <div className='flex justify-center items-center w-full absolute bottom-2'>
-        <button
-          onClick={() => {
-            end = end + 6;
-            start = start + 6;
-            PaginationFetch(start, end);
-          }}
-          href={"/author"}
-          className='mt-3 mx-auto btn_animation text-xs'
-        >
-          <span>Load More</span>
-        </button>
-      </div>
+      {paginationLoading ? (
+        <div className='grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 w-full h-full max-w-7xl mx-auto'>
+          {Array.from({ length: 6 }).map((index) => {
+            return <Skeleton key={index} />;
+          })}
+        </div>
+      ) : (
+        <div className='flex justify-center items-center w-full absolute bottom-2'>
+          {showMore ? (
+            <button
+              onClick={() => {
+                end = end + 6;
+                start = start + 6;
+                PaginationFetch(start, end);
+              }}
+              href={"/author"}
+              className='mt-3 mx-auto btn_animation text-xs'
+            >
+              <span>Load More</span>
+            </button>
+          ) : (
+            <p>no more posts show</p>
+          )}
+        </div>
+      )}
     </div>
   );
 };
