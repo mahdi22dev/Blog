@@ -15,7 +15,7 @@ export default async function RelatedArticles() {
         </h2>
         <div className='w-3/4 h-[1.5px] bg-primary '></div>
       </div>
-      <div className='grid grid-cols-2 py-2  gap-4 mt-3 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 py-2 gap-4 mt-3 '>
         {posts.map((post) => {
           return <RelatedArticlesSingle post={post} />;
         })}

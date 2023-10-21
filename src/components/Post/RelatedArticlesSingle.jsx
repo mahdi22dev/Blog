@@ -4,12 +4,13 @@ import { dateFormater } from "@/utils/utils";
 import { urlFor } from "@/utils/sanity-utils";
 
 export default function RelatedArticlesSingle({ post }) {
+  console.log(post);
   const imageSrc = urlFor(post.mainImage).url();
   return (
     <div className=''>
       <Link
-        href={`/post/${post.slug.current}`}
-        className='flex gap-2 group m-2 bg-white py-4 pl-2 pr-4 h-32'
+        href={`/post/${post.slug}`}
+        className='flex gap-2 group m-2 bg-white  h-24'
       >
         <Image
           src={imageSrc}
@@ -18,7 +19,7 @@ export default function RelatedArticlesSingle({ post }) {
           height={100}
           className='rounded-md max-h-[100px] mr-2 hover:scale-110 transition-all '
         />
-        <div className='font-bold flex gap-1 justify-between flex-col'>
+        <div className='font-bold flex gap-1 justify-between flex-col py-4 pl-2 pr-4'>
           <p className='text-[14px] hover:text-primary transition-colors group-hover:text-primary'>
             {post.title}
           </p>
