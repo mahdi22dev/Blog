@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { client } from "../../../sanity/lib/client";
-import RecentPostsHeader from "./RecentPostsHeader";
+import RecentPostsHeader from "./Recent/RecentPostsHeader";
 import RecentDivider from "./Recent/RecentDivider";
 import { LiaHashtagSolid } from "react-icons/lia";
 import TagsSkeleton from "../Loading/TagsSkeleton";

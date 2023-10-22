@@ -1,9 +1,8 @@
-import React from "react";
-import RecentDivider from "./Recent/RecentDivider";
-import RecentSinglePost from "./RecentSinglePost";
-import { client } from "../../../sanity/lib/client";
-import GlobalTags from "./GlobalTags";
+import { client } from "../../../../sanity/lib/client";
+import GlobalTags from "../GlobalTags";
+import RecentDivider from "./RecentDivider";
 import RecentPostsHeader from "./RecentPostsHeader";
+import RecentSinglePost from "./RecentSinglePost";
 
 export default async function RecentPosts() {
   let posts = [];

@@ -1,6 +1,6 @@
 "use client";
 import { urlFor } from "@/utils/sanity-utils";
-import { dateFormater } from "@/utils/utils";
+import { dateFormater, estimateReadTime } from "@/utils/utils";
 import Link from "next/link";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
@@ -22,15 +22,13 @@ export default function Profile({ post }) {
           -- {dateFormater(post.createdAt)}
         </p>
       </div>
-      <div className='flex items-center gap-2 text-base'>
-        <p>8 min</p>
-        {
-          <AiOutlineFieldTime
-            data-tooltip-id='my-tooltip'
-            data-tooltip-content={"readtime"}
-            className=''
-          />
-        }
+      <div
+        data-tooltip-id='my-tooltip'
+        data-tooltip-content={"readtime"}
+        className='flex items-center gap-2 text-base '
+      >
+        <p>{estimateReadTime(post.body)} min</p>
+        {<AiOutlineFieldTime className='' />}
       </div>
     </div>
   );

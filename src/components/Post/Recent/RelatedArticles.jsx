@@ -1,5 +1,5 @@
-import { client } from "../../../sanity/lib/client";
-import RelatedArticlesSingle from "./RelatedArticlesSingle";
+import { client } from "../../../../sanity/lib/client";
+import RelatedArticlesSingle from "../RelatedArticlesSingle";
 
 export default async function RelatedArticles() {
   const query =

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { urlFor } from "@/utils/sanity-utils";
 import { dateFormater } from "@/utils/utils";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function RecentSinglePost({ post }) {

@@ -4,13 +4,13 @@ import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import { urlFor } from "@/utils/sanity-utils";
 import Profile from "@/components/Post/Author/Profile";
-import RecentPosts from "@/components/Post/RecentPosts";
+import RecentPosts from "@/components/Post/Recent/RecentPosts";
 import Tags from "@/components/Post/Tags";
 import Dotted from "@/components/Post/Dotted";
 import Share from "@/components/Post/Share";
 import NavigateToPosts from "@/components/Post/NavigateToPosts";
 import AuthorInfo from "@/components/Post/Author/AuthorInfo";
-import RelatedArticles from "@/components/Post/RelatedArticles";
+import RelatedArticles from "@/components/Post/Recent/RelatedArticles";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
