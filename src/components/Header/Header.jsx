@@ -16,7 +16,6 @@ export default function Header() {
           className='cursor-pointer mt-4 md:mt-14 text-5xl md:hidden hover:text-primary hover:scale-125 transition-transform duration-300'
           onClick={() => setToggle(!toggle)}
         />
-        {/* navbar */}
         <div className='w-full'>
           <Link
             href={"/"}
