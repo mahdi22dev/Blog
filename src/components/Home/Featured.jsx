@@ -24,10 +24,10 @@ export default function Featured({ post, maxw, width, className }) {
         <div className='absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group'></div>
       </div>
       <Link
-        href={"/"}
+        href={`/tags/${post?.categories?.[0]?.title}`}
         className='absolute top-3 left-3 uppercase text-white hover:opacity-90 transition bg-primary py-1 px-1 min-w-[50px] text-center'
       >
-        {post?.categories?.[0]?.title || "general"}
+        {post?.categories?.[0]?.title || "GENERAL"}
       </Link>
       <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2 '>
         <a
