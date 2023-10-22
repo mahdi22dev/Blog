@@ -1,5 +1,5 @@
 import React from "react";
-import RecentDivider from "./RecentDivider";
+import RecentDivider from "./Recent/RecentDivider";
 import RecentSinglePost from "./RecentSinglePost";
 import { client } from "../../../sanity/lib/client";
 import GlobalTags from "./GlobalTags";

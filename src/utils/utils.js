@@ -26,32 +26,27 @@ export const Generatesharelink = (link, title, slug) => {
   return link.title;
 };
 
-export function readTime(content) {
-  const WPS = 275 / 60;
+export function estimateReadTime(body) {
+  // Define the average words per minute
+  const wordsPerMinute = 200; // You can adjust this based on your content and reader's speed.
 
-  var images = 0;
-  const regex = /\w/;
+  // Initialize a variable to keep track of the total word count
+  let totalWords = 0;
 
-  let words = content.split(" ").filter((word) => {
-    if (word.includes("<img")) {
-      images += 1;
+  // Iterate through the body content and extract plain text
+  body.forEach((block) => {
+    if (block._type === "block" && block.children) {
+      block.children.forEach((span) => {
+        if (span._type === "span" && span.text) {
+          const textWords = span.text.split(" ").length;
+          totalWords += textWords;
+        }
+      });
     }
-    return regex.test(word);
-  }).length;
+  });
 
-  var imageAdjust = images * 4;
-  var imageSecs = 0;
-  var imageFactor = 12;
+  // Calculate estimated read time
+  const readTimeMinutes = totalWords / wordsPerMinute;
 
-  while (images) {
-    imageSecs += imageFactor;
-    if (imageFactor > 3) {
-      imageFactor -= 1;
-    }
-    images -= 1;
-  }
-
-  const minutes = Math.ceil(((words - imageAdjust) / WPS + imageSecs) / 60);
-
-  return minutes;
+  return Math.ceil(readTimeMinutes); // Round up to the nearest minute
 }

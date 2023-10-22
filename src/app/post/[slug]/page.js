@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { client } from "../../../../sanity/lib/client";
-// import MarkDown from "@/components/MarkDown";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import { urlFor } from "@/utils/sanity-utils";
@@ -12,7 +11,6 @@ import Share from "@/components/Post/Share";
 import NavigateToPosts from "@/components/Post/NavigateToPosts";
 import AuthorInfo from "@/components/Post/Author/AuthorInfo";
 import RelatedArticles from "@/components/Post/RelatedArticles";
-import { readTime } from "@/utils/utils";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -29,6 +27,7 @@ export async function generateMetadata({ params }) {
   }
 `;
   const post = await client.fetch(query, { slug });
+
   if (!post) {
     return notFound();
   }
