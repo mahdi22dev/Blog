@@ -6,7 +6,6 @@ export default async function RelatedArticles() {
     '*[_type == "post"]{ _id, title,mainImage,_createdAt, "slug":slug.current }[0..3]';
 
   const posts = await client.fetch(query);
-  console.log(posts);
   return (
     <div className='p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl min-w-[50vw]	'>
       <div className='flex justify-between items-center gap-3'>

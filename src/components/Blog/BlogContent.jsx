@@ -32,7 +32,6 @@ const BlogContent = () => {
       '*[_type == "post"]{ _id, title, mainImage,"slug":slug.current,categories[]->{title},_createdAt, "authorname": author->name }[0..5]';
     const posts = await client.fetch(query);
     setData(posts);
-    console.log(posts);
     setLoading(false);
   };
 

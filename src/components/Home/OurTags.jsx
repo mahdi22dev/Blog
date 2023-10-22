@@ -4,7 +4,6 @@ import OurtagsSingle from "./OurtagsSingle";
 export default async function OurTags() {
   const query = `*[_type == "category"]  {title,mainImage}`;
   const posts = await client.fetch(query);
-  console.log(posts);
 
   return (
     <section className='max-w-6xl mx-auto flex flex-col items-center p-3 mb-10 '>

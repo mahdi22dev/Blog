@@ -12,7 +12,6 @@ const TagsContent = ({ tag }) => {
   const [loading, setLoading] = useState(true);
   const [paginationLoading, setPaginationLoading] = useState(false);
   const [showMore, setShowMore] = useState(true);
-  console.log(tag);
   const PaginationFetch = async (start, end) => {
     setPaginationLoading(true);
     const query = `*[_type == "post" && references($tag) ] | order(_createdAt desc) {
@@ -26,7 +25,6 @@ const TagsContent = ({ tag }) => {
 }[$start..$end]`;
 
     const posts = await client.fetch(query, { tag: tag, start, end });
-    console.log(posts);
     const oldData = [...data, ...posts];
     setData(oldData);
     if (posts.length == 0) {
@@ -49,7 +47,6 @@ const TagsContent = ({ tag }) => {
 }[0..5]`;
     const posts = await client.fetch(query, { tag: tag });
     setData(posts);
-    console.log(posts);
     setLoading(false);
   };
 
