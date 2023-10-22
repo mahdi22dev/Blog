@@ -22,11 +22,11 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <ToastContainer />
           <NextTopLoader color='#dca8a9' height={5} />
-
           <div className='h-[2px] bg-gray-200'></div>
           <Header />
           <div className='h-[2px] bg-gray-200'></div>
           {children}
+          <p>footer</p>
         </AppProvider>
       </body>
     </html>

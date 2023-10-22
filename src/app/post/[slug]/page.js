@@ -12,6 +12,7 @@ import Share from "@/components/Post/Share";
 import NavigateToPosts from "@/components/Post/NavigateToPosts";
 import AuthorInfo from "@/components/Post/Author/AuthorInfo";
 import RelatedArticles from "@/components/Post/RelatedArticles";
+import { readTime } from "@/utils/utils";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }) {
   if (!post) {
     return notFound();
   }
+
   return {
     title: post.title,
     description: post.title,
@@ -65,6 +67,7 @@ export default async function Home({ params }) {
   } catch (error) {
     throw new Error(error);
   }
+
   const imageSrc = urlFor(post.mainImage).url();
 
   return (
@@ -81,7 +84,6 @@ export default async function Home({ params }) {
             />
             <div className='absolute bottom-0 left-0 right-0 top-0 w-[99%] h-[99%] mx-auto my-auto border-white border-2'></div>
           </div>
-
           <div class='prose md:prose-lg prose-a:text-primary max-w-4xl mx-auto p-10 pt-1'>
             <Profile post={post} />
             <h1 className='text-4xl md:text-6xl font-extrabold text-text'>
@@ -98,9 +100,6 @@ export default async function Home({ params }) {
           </div>
         </article>
         <AuthorInfo info={post?.author} />
-        {/* <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
-          i may add a comment section later
-        </div> */}
         <RelatedArticles />
       </div>
       <RecentPosts />
