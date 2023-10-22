@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import { BsArrowBarUp } from "react-icons/bs";
+import { motion } from "framer-motion";
 function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -28,15 +29,19 @@ function BackToTopButton() {
   }, []);
 
   return (
-    <button
+    <motion.button
       id='back-to-top'
       onClick={scrollToTop}
-      className={`${
-        isVisible ? "block" : "hidden"
-      } bg-primary p-2 fixed bottom-14 right-10`}
+      className='bg-primary p-3 fixed bottom-9 right-8 text-[30px] cursor-pointer rounded-[100%] hover:bg-opacity-80 text-white'
+      style={{ display: isVisible ? "block" : "none" }}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.5 }}
+      transition={{ duration: 0.5 }}
     >
-      Back to Top
-    </button>
+      <BsArrowBarUp />
+    </motion.button>
   );
 }
 

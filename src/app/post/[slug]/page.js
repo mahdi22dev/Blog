@@ -12,6 +12,7 @@ import NavigateToPosts from "@/components/Post/NavigateToPosts";
 import AuthorInfo from "@/components/Post/Author/AuthorInfo";
 import RelatedArticles from "@/components/Post/Recent/RelatedArticles";
 import BackToTopButton from "@/components/Post/BackToTopButton";
+import ScrollAnimation from "@/components/Post/ScrollAnimation";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -74,7 +75,9 @@ export default async function Home({ params }) {
     <>
       <main className='text-black mx-auto w-full flex flex-col lg:flex-row max-w-[85rem] relative'>
         <div id='top' className='hidden'></div>
+
         <div>
+          <ScrollAnimation />
           <article className='mt-3 mx-10 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
             <div className='relative h-[60vh] mb-5 block mx-auto'>
               <Image

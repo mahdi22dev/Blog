@@ -9,7 +9,7 @@ import TagsSkeleton from "../Loading/TagsSkeleton";
 
 export default function GlobalTags() {
   const [tags, setTags] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchTags = async () => {
     setLoading(true);
