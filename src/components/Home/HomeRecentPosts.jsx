@@ -1,6 +1,5 @@
 import Link from "next/link";
 import RecentFirstPost from "./RecentFirstPost";
-import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { BiRightArrowAlt } from "react-icons/bi";
 export default function HomeRecentPosts({ post }) {
   return (
