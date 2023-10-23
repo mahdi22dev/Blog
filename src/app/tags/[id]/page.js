@@ -11,7 +11,7 @@ export default async function page({ params }) {
       <h2 className='w-full text-center text-4xl my-4 uppercase text-primary'>
         # {title}
       </h2>
-      <TagsContent tag={posts[0]._id} />
+      <TagsContent id={posts[0]._id} />
     </main>
   );
 }

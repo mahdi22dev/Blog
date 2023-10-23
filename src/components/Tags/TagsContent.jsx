@@ -7,14 +7,15 @@ import Featured from "../Home/Featured";
 let start = 0;
 let end = 5;
 
-const TagsContent = ({ tag }) => {
+const TagsContent = ({ id }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [paginationLoading, setPaginationLoading] = useState(false);
   const [showMore, setShowMore] = useState(true);
+
   const PaginationFetch = async (start, end) => {
     setPaginationLoading(true);
-    const query = `*[_type == "post" && references($tag) ] | order(_createdAt desc) {
+    const query = `*[_type == "post" && references($id) ] | order(_createdAt desc) {
   _id,
   title,
   mainImage,
@@ -24,7 +25,7 @@ const TagsContent = ({ tag }) => {
   "authorname": author->name
 }[$start..$end]`;
 
-    const posts = await client.fetch(query, { tag: tag, start, end });
+    const posts = await client.fetch(query, { id: id, start, end });
     const oldData = [...data, ...posts];
     setData(oldData);
     if (posts.length == 0) {
@@ -36,7 +37,7 @@ const TagsContent = ({ tag }) => {
   const fetchClient = async () => {
     setLoading(true);
 
-    const query = `*[_type == "post" && references($tag) ] | order(_createdAt desc) {
+    const query = `*[_type == "post" && references($id) ] | order(_createdAt desc) {
   _id,
   title,
   mainImage,
@@ -45,7 +46,7 @@ const TagsContent = ({ tag }) => {
   _createdAt,
   "authorname": author->name
 }[0..5]`;
-    const posts = await client.fetch(query, { tag: tag });
+    const posts = await client.fetch(query, { id: id });
     setData(posts);
     setLoading(false);
   };

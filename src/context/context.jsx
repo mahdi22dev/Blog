@@ -16,6 +16,10 @@ const AppProvider = ({ children }) => {
       sethighlight("/tags");
       return;
     }
+    if (pathname.includes("author")) {
+      sethighlight("/blog");
+      return;
+    }
     sethighlight(pathname);
   }, [pathname]);
 

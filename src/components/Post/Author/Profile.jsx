@@ -6,6 +6,7 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 
 export default function Profile({ post }) {
+  console.log(post);
   return (
     <div className='flex justify-start items-center gap-5'>
       <Tooltip id='my-tooltip' />
@@ -16,7 +17,10 @@ export default function Profile({ post }) {
           className='rounded-[100%] w-11 h-11'
         />
         <p className='text-xs text-black  dark:text-white font-medium '>
-          <Link className='not-prose hover:text-primary transition' href={"/"}>
+          <Link
+            className='not-prose hover:text-primary transition'
+            href={`/author/${post?.author?.slug?.current}`}
+          >
             {post.author.name}
           </Link>{" "}
           -- {dateFormater(post.createdAt)}

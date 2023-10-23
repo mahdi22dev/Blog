@@ -12,7 +12,7 @@ export default function ScrollAnimation() {
 
   return (
     <motion.div
-      className='progress-bar bg-primary'
+      className='progress-bar z-50 bg-primary'
       style={{ scaleX }}
     ></motion.div>
   );

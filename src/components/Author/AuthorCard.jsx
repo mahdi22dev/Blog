@@ -1,13 +1,13 @@
-import { urlFor } from "@/utils/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import React from "react";
-import AuthorsocialLinks from "../Author/AuthorsocialLinks";
+import AuthorsocialLinks from "../Post/Author/AuthorsocialLinks";
+import { urlFor } from "@/utils/sanity-utils";
 
-export default function AuthorInfo({ info }) {
-  console.log(info);
+export default function AuthorCard({ author }) {
+  const info = author[0];
   return (
-    <div className='relative p-4 mt-3 mx-10 py-20 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw] bg-white'>
+    <div className='relative p-4 mt-3  py-15 pt-11 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[25vw] bg-white mx-auto'>
       <AuthorsocialLinks info={""} />
       <div className='flex justify-center items-start gap-4'>
         <div>
@@ -31,11 +31,6 @@ export default function AuthorInfo({ info }) {
       </div>
       <div className='text-center mt-4 mx-auto max-w-[500px]'>
         <PortableText value={info.bio} />
-      </div>
-      <div className='flex justify-center items-center w-full absolute -bottom-6 '>
-        <Link href={"/author"} className='mt-3 mx-auto btn_animation text-xs'>
-          <span> View All Articles</span>
-        </Link>
       </div>
     </div>
   );
