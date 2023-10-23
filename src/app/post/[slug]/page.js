@@ -74,8 +74,6 @@ export default async function Home({ params }) {
   return (
     <>
       <main className='text-black mx-auto w-full flex flex-col lg:flex-row max-w-[85rem] relative'>
-        <div id='top' className='hidden'></div>
-
         <div>
           <ScrollAnimation />
           <article className='mt-3 mx-10 lg:w-auto mb-10 max-w-4xl shadow-md min-w-[50vw]	bg-white'>
@@ -106,7 +104,6 @@ export default async function Home({ params }) {
           </article>
           <AuthorInfo info={post?.author} />
           <RelatedArticles />
-          <BackToTopButton />
         </div>
         <RecentPosts />
       </main>

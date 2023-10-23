@@ -37,7 +37,7 @@ function BackToTopButton() {
         <motion.button
           id='back-to-top'
           onClick={scrollToTop}
-          className='bg-primary p-3 fixed bottom-9 right-8 text-[30px] cursor-pointer rounded-[100%] hover:bg-opacity-80 text-white hover:scale-110'
+          className='bg-primary p-3 fixed bottom-9 right-8 text-[30px] cursor-pointer rounded-[100%] bg-opacity-80  hover:bg-opacity-100 text-white hover:scale-110 z-50'
           style={{ display: isVisible ? "block" : "none" }}
           layout
           variants={ButtonVariants}

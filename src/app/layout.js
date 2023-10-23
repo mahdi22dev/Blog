@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import { AppProvider } from "@/context/context";
 import NextTopLoader from "nextjs-toploader";
 import { ToastContainer } from "react-toastify";
+import BackToTopButton from "@/components/Post/BackToTopButton";
 
 const josefin_Sans = Josefin_Sans({
   weight: "400",
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
     <html lang='en' className='!scroll-smooth'>
       <body className={`${josefin_Sans.className}`}>
         <AppProvider>
+          <div id='top' className='hidden'></div>
+          <BackToTopButton />
           <ToastContainer />
           <NextTopLoader color='#dca8a9' height={5} />
           <div className='h-[2px] bg-gray-200'></div>
