@@ -1,16 +1,16 @@
-"use client";
 import { urlFor } from "@/utils/sanity-utils";
 import { dateFormater } from "@/utils/utils";
 import Link from "next/link";
+import React from "react";
 
-export default function Featured({ post, maxw, width, className }) {
+export default function RecentFirstPost({ post }) {
   return (
     <Link
       href={`/post/${post.slug}`}
-      className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md mb-4 md:mb-auto hover:brightness-95`}
+      className={`overflow-hidden relative mx-auto group max-w-[80%] md:max-w-4xl shadow-md mb-4 md:mb-auto hover:brightness-95 `}
     >
       <div
-        className={`${width} ${maxw} h-[450px] relative brightness-[75%] group-hover:scale-110 transition-transform duration-500 ease-out`}
+        className={`h-[450px] relative transition-transform duration-500 ease-out rounded-2xl`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
             .width(500)
@@ -32,7 +32,7 @@ export default function Featured({ post, maxw, width, className }) {
       <div className='z-40 absolute bottom-3 left-3 pb-5 pl-2 '>
         <a
           href={`/post/${post.slug.current}`}
-          class='fancy-link leading-9 text-white hover:opacity-90 font-bold text-2xl mt-2 group-hover:bg-[length:100%_3px]
+          class='fancy-link leading-9 text-white hover:opacity-90 font-bold text-2xl md:text-4xl mt-2 group-hover:bg-[length:100%_3px]
         '
         >
           {post.title}
