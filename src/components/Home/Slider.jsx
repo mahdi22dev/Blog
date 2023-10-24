@@ -3,7 +3,15 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Mousewheel, Pagination, Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/effect-creative";
+import {
+  EffectCreative,
+  Mousewheel,
+  Navigation,
+  Pagination,
+  Autoplay,
+} from "swiper/modules";
 import SliderSinglePost from "./SliderSinglePost";
 const Slider = ({ posts }) => {
   console.log(posts);
@@ -11,16 +19,36 @@ const Slider = ({ posts }) => {
     <>
       <div className='w-full h-[50vh] mb-10'>
         <Swiper
-          direction={"vertical"}
+          direction={"horizontal"}
+          effect={"creative"}
+          creativeEffect={{
+            prev: {
+              shadow: true,
+              translate: [0, 0, -400],
+            },
+            next: {
+              translate: ["100%", 0, 0],
+            },
+          }}
           slidesPerView={1}
           spaceBetween={30}
-          mousewheel={true}
+          centeredSlides={true}
+          // autoplay={{
+          //   delay: 1500,
+          //   disableOnInteraction: false,
+          // }}
           pagination={{
             clickable: true,
           }}
-          effect='cards'
           navigation={true}
-          modules={[Mousewheel, Pagination, Navigation]}
+          loop={true}
+          modules={[
+            Mousewheel,
+            Navigation,
+            Pagination,
+            EffectCreative,
+            Autoplay,
+          ]}
           className='mySwiper swiper-slide max-w-6xl'
         >
           {posts.map((post) => {
