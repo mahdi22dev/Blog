@@ -1,13 +1,27 @@
 "use client";
 import { usePathname } from "next/navigation";
 import React, { useState, useContext, useEffect } from "react";
+import { client } from "../../sanity/lib/client";
 const AppContext = React.createContext();
+
 const AppProvider = ({ children }) => {
   const pathname = usePathname();
   const [toggle, setToggle] = useState(false);
   const [highlight, sethighlight] = useState(pathname);
   const [footerTags, setFootertags] = useState([]);
   const [footerLatest, setFooterLatest] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchTags = async () => {
+    setLoading(true);
+    const TagsQuery = "*[_type == 'category'] {title,color}";
+    const tagslist = await client.fetch(TagsQuery);
+    const LatestQuery =
+      '*[_type == "post"]{ _id, title,mainImage,_createdAt, "slug":slug.current }[0..3]';
+    const Latestlist = await client.fetch(LatestQuery);
+    setFootertags(tagslist);
+    setFooterLatest(Latestlist);
+  };
 
   useEffect(() => {
     if (pathname.includes("post")) {
@@ -26,7 +40,15 @@ const AppProvider = ({ children }) => {
     window.scroll(0, 0);
   }, [pathname]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    try {
+      fetchTags();
+    } catch (error) {
+      throw new Error(error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   return (
     <AppContext.Provider
@@ -35,6 +57,9 @@ const AppProvider = ({ children }) => {
         setToggle,
         highlight,
         sethighlight,
+        footerTags,
+        footerLatest,
+        loading,
       }}
     >
       {children}

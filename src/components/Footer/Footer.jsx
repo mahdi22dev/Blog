@@ -1,5 +1,7 @@
 "use client";
+import Social from "../Header/Social";
 import FooterSectionHeader from "./FooterSectionHeader";
+import FooterTags from "./FooterTags";
 
 export default function Footer() {
   return (
@@ -15,9 +17,13 @@ export default function Footer() {
         </div>
         <div>
           <FooterSectionHeader title={"Our Tags"} />
+          <FooterTags />
         </div>
         <div>
           <FooterSectionHeader title={"Social"} />
+          <Social
+            className={"p-3 pl-0 flex gap-2 justify-start items-center"}
+          />
         </div>
       </div>
       <div>privacy</div>
