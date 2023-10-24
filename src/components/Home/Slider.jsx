@@ -21,6 +21,7 @@ const Slider = ({ posts }) => {
         <Swiper
           direction={"horizontal"}
           effect={"creative"}
+          mousewheel={true}
           creativeEffect={{
             prev: {
               shadow: true,
@@ -33,10 +34,10 @@ const Slider = ({ posts }) => {
           slidesPerView={1}
           spaceBetween={30}
           centeredSlides={true}
-          // autoplay={{
-          //   delay: 1500,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
           pagination={{
             clickable: true,
           }}
