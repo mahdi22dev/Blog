@@ -5,6 +5,7 @@ import { AppProvider } from "@/context/context";
 import NextTopLoader from "nextjs-toploader";
 import { ToastContainer } from "react-toastify";
 import BackToTopButton from "@/components/Post/BackToTopButton";
+import Footer from "@/components/Footer/Footer";
 
 const josefin_Sans = Josefin_Sans({
   weight: "400",
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
           <Header />
           <div className='h-[2px] bg-gray-200'></div>
           {children}
-          <p>footer</p>
+          <Footer />
         </AppProvider>
       </body>
     </html>

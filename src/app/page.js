@@ -7,6 +7,7 @@ import RecentSmallPost from "@/components/Home/RecentSmallPost";
 import Link from "next/link";
 import Slider from "@/components/Home/Slider";
 import SectionHeader from "@/components/Home/SectionHeader";
+import Subscribe from "@/components/Subscribe/Subscribe";
 
 export default async function page() {
   const query = `*[_type == "post"] { _id, title, mainImage, categories[]-> { title}, "slug":slug.current, _createdAt ,"authorname": author->name } | order(_createdAt desc) [0..15]`;
@@ -50,6 +51,7 @@ export default async function page() {
           <span>View All Posts</span>
         </button>
       </Link>
+      <Subscribe />
     </main>
   );
 }

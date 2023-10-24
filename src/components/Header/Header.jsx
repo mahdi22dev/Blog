@@ -4,7 +4,6 @@ import Search from "./Search";
 import Navbar from "./Navbar";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { useGlobalContext } from "@/context/context";
-import Image from "next/image";
 import ResNavbar from "./ResNavbar";
 import Link from "next/link";
 export default function Header() {

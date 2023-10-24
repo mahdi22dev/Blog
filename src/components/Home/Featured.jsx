@@ -7,7 +7,7 @@ export default function Featured({ post, maxw, width, className }) {
   return (
     <Link
       href={`/post/${post.slug}`}
-      className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md mb-4 md:mb-auto hover:brightness-95`}
+      className={`${className} overflow-hidden relative ${maxw} mx-auto rounded-md group shadow-md hover:shadow-xl mb-4 md:mb-auto hover:brightness-95`}
     >
       <div
         className={`${width} ${maxw} h-[450px] relative brightness-[75%] group-hover:scale-110 transition-transform duration-500 ease-out`}
