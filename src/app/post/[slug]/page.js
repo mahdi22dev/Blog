@@ -13,6 +13,7 @@ import AuthorInfo from "@/components/Post/Author/AuthorInfo";
 import RelatedArticles from "@/components/Post/Recent/RelatedArticles";
 import BackToTopButton from "@/components/Post/BackToTopButton";
 import ScrollAnimation from "@/components/Post/ScrollAnimation";
+import Subscribe from "@/components/Subscribe/Subscribe";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -104,6 +105,7 @@ export default async function Home({ params }) {
           </article>
           <AuthorInfo info={post?.author} />
           <RelatedArticles />
+          <Subscribe />
         </div>
         <RecentPosts />
       </main>

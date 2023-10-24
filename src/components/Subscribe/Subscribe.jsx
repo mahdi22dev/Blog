@@ -9,7 +9,7 @@ export default function Subscribe() {
       <p>Get the latest posts delivered right to your email.</p>
       <div className='flex mx-auto justify-center items-center mt-5 '>
         <input
-          className='px-2 w-64 h-[58px]  border border-opacity-30 focus:border-opacity-100 outline-none border-gray-500 bg-gray-50 '
+          className='px-2 w-64 h-[58px] border border-opacity-30 focus:border-opacity-100 outline-none border-gray-500 bg-gray-50 rounded-md shadow-lg '
           type='email'
           placeholder='Enter Your Email'
         />

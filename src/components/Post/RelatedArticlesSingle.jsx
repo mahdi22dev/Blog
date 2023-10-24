@@ -9,7 +9,7 @@ export default function RelatedArticlesSingle({ post }) {
     <div className=''>
       <Link
         href={`/post/${post.slug}`}
-        className='flex gap-2 group m-2 bg-white  h-24'
+        className='flex gap-2 group m-2 bg-white h-24'
       >
         <Image
           src={imageSrc}
