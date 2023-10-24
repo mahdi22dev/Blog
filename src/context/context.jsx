@@ -6,6 +6,8 @@ const AppProvider = ({ children }) => {
   const pathname = usePathname();
   const [toggle, setToggle] = useState(false);
   const [highlight, sethighlight] = useState(pathname);
+  const [footerTags, setFootertags] = useState([]);
+  const [footerLatest, setFooterLatest] = useState([]);
 
   useEffect(() => {
     if (pathname.includes("post")) {
@@ -23,6 +25,8 @@ const AppProvider = ({ children }) => {
     sethighlight(pathname);
     window.scroll(0, 0);
   }, [pathname]);
+
+  useEffect(() => {}, []);
 
   return (
     <AppContext.Provider

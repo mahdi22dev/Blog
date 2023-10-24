@@ -20,7 +20,7 @@ export default async function page() {
   console.log(sliderPosts.length);
   return (
     <main className='mx-auto w-full max-w-7xl p-3 min-h-screen'>
-      <section className='mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1 mb-10'>
+      <section className='mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1 mb-10 overflow-hidden'>
         <Featured
           post={posts[0]}
           width={"w-[80vw] md:w-[600px]"}

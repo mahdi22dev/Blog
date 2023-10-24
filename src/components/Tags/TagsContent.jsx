@@ -56,7 +56,7 @@ const TagsContent = ({ id }) => {
   }, []);
 
   return (
-    <div className='pb-20'>
+    <div className='pb-28'>
       {loading ? (
         <div className='grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 w-full h-full max-w-7xl mx-auto'>
           {Array.from({ length: 6 }).map((index) => {
@@ -85,7 +85,7 @@ const TagsContent = ({ id }) => {
           })}
         </div>
       ) : (
-        <div className='flex justify-center items-center w-full absolute bottom-2'>
+        <div className='flex justify-center items-center w-full absolute bottom-30 my-5'>
           {showMore ? (
             <button
               onClick={() => {
