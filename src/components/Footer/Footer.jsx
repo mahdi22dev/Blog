@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Social from "../Header/Social";
 import FooterLatest from "./FooterLatest";
 import FooterSectionHeader from "./FooterSectionHeader";
@@ -12,7 +13,10 @@ export default function Footer() {
           <p className='text-[clamp(20px,3vw,30px)] font-bold  mb-4 uppercase'>
             <span className='text-primary'> D</span>aily Life
           </p>
-          <p>privacy</p>
+          <Link href={"/home"}>home</Link>
+          <Link href={"/blog"}>blog</Link>
+          <Link href={"/about"}>about</Link>
+          <Link href={"/privacy"}>privacy</Link>
         </div>
         <div>
           <FooterSectionHeader title={"Latest Articles"} />

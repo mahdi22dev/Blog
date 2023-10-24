@@ -11,7 +11,7 @@ export default function RelatedArticlesSingle({ post }) {
         href={`/post/${post.slug}`}
         className='flex gap-2 group m-2 bg-white h-24 shadow-md hover:shadow-lg'
       >
-        <div className='w-1/4 min-w-[100px] relative'>
+        <div className='w-1/4 min-w-[100px] max-w-[125px] relative'>
           <Image
             src={imageSrc}
             alt={post?.mainimage?.alt || "image"}
