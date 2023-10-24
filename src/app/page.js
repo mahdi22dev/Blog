@@ -36,11 +36,11 @@ export default async function page() {
       <HomeRecentPosts post={posts[3]} />
       <div className='grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 max-w-6xl mx-auto mb-10'>
         {slicedPosts.map((post) => {
-          return <RecentSmallPost post={post} />;
+          return <RecentSmallPost key={post.title} post={post} />;
         })}
       </div>
       <Link href={"/blog"}>
-        <button className='mt-3 mx-auto btn_animation text-xs'>
+        <button className='mt-3 mb-10 mx-auto btn_animation text-xs'>
           <span>View All Posts</span>
         </button>
       </Link>
