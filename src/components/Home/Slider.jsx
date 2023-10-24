@@ -42,7 +42,7 @@ const Slider = ({ posts }) => {
         >
           {posts.map((post) => {
             return (
-              <SwiperSlide className='bg-red-500'>
+              <SwiperSlide key={post.title} className='bg-red-500'>
                 {<SliderSinglePost key={post.slug} post={post} />}
               </SwiperSlide>
             );
