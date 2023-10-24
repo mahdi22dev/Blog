@@ -21,6 +21,7 @@ const AppProvider = ({ children }) => {
       return;
     }
     sethighlight(pathname);
+    window.scroll(0, 0);
   }, [pathname]);
 
   return (
