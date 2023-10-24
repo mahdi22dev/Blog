@@ -9,20 +9,23 @@ export default function RelatedArticlesSingle({ post }) {
     <div className=''>
       <Link
         href={`/post/${post.slug}`}
-        className='flex gap-2 group m-2 bg-white h-24'
+        className='flex gap-2 group m-2 bg-white h-24 shadow-md hover:shadow-lg'
       >
-        <Image
-          src={imageSrc}
-          alt={post?.mainimage?.alt || "image"}
-          width={100}
-          height={100}
-          className='rounded-md max-h-[100px] mr-2 hover:scale-110 transition-all '
-        />
+        <div className='w-1/4 min-w-[100px] relative'>
+          <Image
+            src={imageSrc}
+            alt={post?.mainimage?.alt || "image"}
+            fill
+            className='rounded-md max-h-[100px] mr-2 hover:scale-110 transition-all '
+          />
+        </div>
         <div className='font-bold flex gap-1 justify-between flex-col py-4 pl-2 pr-4'>
-          <a className='text-[14px] hover:text-primary transition-colors group-hover:text-primary '>
+          <a className='text-[clamp(11px,1vw,14px)] hover:text-primary transition-colors group-hover:text-primary '>
             {post.title}
           </a>
-          <p className='text-xs opacity-40'>{dateFormater(post._createdAt)}</p>
+          <p className='text-[clamp(9px,0.8vw,12px)] opacity-40'>
+            {dateFormater(post._createdAt)}
+          </p>
         </div>
       </Link>
     </div>
