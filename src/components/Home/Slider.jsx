@@ -10,11 +10,9 @@ import {
   Mousewheel,
   Navigation,
   Pagination,
-  Autoplay,
 } from "swiper/modules";
 import SliderSinglePost from "./SliderSinglePost";
 const Slider = ({ posts }) => {
-  console.log(posts);
   return (
     <>
       <div className='w-full h-[50vh] mb-10'>
@@ -34,22 +32,12 @@ const Slider = ({ posts }) => {
           slidesPerView={1}
           spaceBetween={30}
           centeredSlides={true}
-          autoplay={{
-            delay: 1500,
-            disableOnInteraction: false,
-          }}
           pagination={{
             clickable: true,
           }}
           navigation={true}
           loop={true}
-          modules={[
-            Mousewheel,
-            Navigation,
-            Pagination,
-            EffectCreative,
-            Autoplay,
-          ]}
+          modules={[Mousewheel, Navigation, Pagination, EffectCreative]}
           className='mySwiper swiper-slide max-w-6xl'
         >
           {posts.map((post) => {
