@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { client } from "../../../sanity/lib/client";
 import Skeleton from "../Loading/Skeleton";
 import Featured from "../Home/Featured";
+import { Initialtags, Paginationtags } from "@/server-actions/serverfunctions";
 
 let start = 0;
 let end = 5;
@@ -15,17 +15,7 @@ const TagsContent = ({ id }) => {
 
   const PaginationFetch = async (start, end) => {
     setPaginationLoading(true);
-    const query = `*[_type == "post" && references($id) ] | order(_createdAt desc) {
-  _id,
-  title,
-  mainImage,
-  "slug": slug.current,
-  categories[]->{title},
-  _createdAt,
-  "authorname": author->name
-}[$start..$end]`;
-
-    const posts = await client.fetch(query, { id: id, start, end });
+    const posts = await Paginationtags(id, start, end);
     const oldData = [...data, ...posts];
     setData(oldData);
     if (posts.length == 0) {
@@ -36,17 +26,7 @@ const TagsContent = ({ id }) => {
 
   const fetchClient = async () => {
     setLoading(true);
-
-    const query = `*[_type == "post" && references($id) ] | order(_createdAt desc) {
-  _id,
-  title,
-  mainImage,
-  "slug": slug.current,
-  categories[]->{title},
-  _createdAt,
-  "authorname": author->name
-}[0..5]`;
-    const posts = await client.fetch(query, { id: id });
+    const posts = await Initialtags(id);
     setData(posts);
     setLoading(false);
   };
