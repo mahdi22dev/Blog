@@ -16,5 +16,5 @@ export const ButtonVariants = {
     scale: 0.1,
     transition: { duration: 0.6 },
   },
-  exit: { opacity: 0, scale: 0.5, transition: { duration: 0.6 } },
+  exit: { opacity: 0, scale: 0.1, transition: { duration: 0.6 } },
 };

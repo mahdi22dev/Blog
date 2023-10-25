@@ -44,6 +44,16 @@ const SearchResults = () => {
     fetchClient();
   }, [search]);
 
+  if (data.length == 0) {
+    return (
+      !loading && (
+        <div className='w-full h-full max-w-7xl mx-auto flex justify-center items-center'>
+          no result matching your term found
+        </div>
+      )
+    );
+  }
+
   return (
     <div className='pb-20'>
       {loading ? (
