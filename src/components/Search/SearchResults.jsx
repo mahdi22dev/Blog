@@ -1,10 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { client } from "../../../sanity/lib/client";
+import { useState, useEffect } from "react";
 import Skeleton from "../Loading/Skeleton";
 import Featured from "../Home/Featured";
 import { useSearchParams } from "next/navigation";
 import { LiaSearchSolid } from "react-icons/lia";
+
+import {
+  Initialsearch,
+  Paginationsearch,
+} from "@/server-actions/serverfunctions";
 
 let start = 0;
 let end = 5;
@@ -21,9 +25,7 @@ const SearchResults = () => {
 
   const PaginationFetch = async (start, end) => {
     setPaginationLoading(true);
-    const query =
-      '*[_type == "post" && title match $search]{ _id, title, mainImage,"slug":slug.current,categories[]->{title},_createdAt, "authorname": author->name }[$start..$end]';
-    const posts = await client.fetch(query, { search, start, end });
+    const posts = await Paginationsearch(search, start, end);
     const oldData = [...data, ...posts];
     setData(oldData);
     if (posts.length == 0) {
@@ -34,9 +36,7 @@ const SearchResults = () => {
 
   const fetchClient = async () => {
     setLoading(true);
-    const query =
-      '*[_type == "post" && title match $search]{ _id, title, mainImage,"slug":slug.current,categories[]->{title},_createdAt, "authorname": author->name }[0..5]';
-    const posts = await client.fetch(query, { search });
+    const posts = await Initialsearch(search);
     setData(posts);
     setLoading(false);
   };
