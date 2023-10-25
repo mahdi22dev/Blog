@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function RecentSmallPost({ post }) {
   return (
     <div className='mx-auto group mb-4 md:mb-auto m-2 w-[100%] md:w-auto mt-4 '>
-      <div className='relative w-full h-[27rem] md:h-96 mb-7'>
+      <div className='relative w-full min-w-[15vw] h-[27rem] md:h-96 mb-7'>
         <Image
           src={urlFor(post.mainImage).width(500).height(500).url()}
           alt='image'

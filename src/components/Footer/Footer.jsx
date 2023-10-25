@@ -14,7 +14,7 @@ export default function Footer() {
           <p className='text-[clamp(20px,3vw,30px)] font-bold  mb-4 uppercase'>
             <span className='text-primary'> D</span>aily Life
           </p>
-          <div className='flex gap-2  justify-start items-center'>
+          <div className='flex gap-2'>
             {footerlinks.map((link) => {
               return (
                 <Link

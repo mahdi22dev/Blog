@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
   const [footerTags, setFootertags] = useState([]);
   const [footerLatest, setFooterLatest] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [searchModal, setSearchModal] = useState(true);
   const fetchTags = async () => {
     setLoading(true);
     const TagsQuery = "*[_type == 'category'] {title,color}";
@@ -60,6 +60,8 @@ const AppProvider = ({ children }) => {
         footerTags,
         footerLatest,
         loading,
+        searchModal,
+        setSearchModal,
       }}
     >
       {children}
