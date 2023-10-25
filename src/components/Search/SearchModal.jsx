@@ -1,6 +1,7 @@
 "use client";
 
 import { useGlobalContext } from "@/context/context";
+import Link from "next/link";
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 
@@ -10,7 +11,9 @@ export default function SearchModal() {
 
   return (
     <main
-      className={`fixed top-0 bottom-0 right-0  overflow-hidden overflow-x-hidden w-full min-h-screen bg-primary z-[100]`}
+      className={`${
+        searchModal ? "fixed" : "hidden"
+      }  top-0 bottom-0 right-0 overflow-hidden overflow-x-hidden w-full min-h-screen bg-primary z-[10000]`}
     >
       <IoClose
         className='fixed top-5 right-5  hover:rotate-180 hover:scale-125 transition-all text-4xl cursor-pointer   text-white hover:opacity-50 '
@@ -28,12 +31,25 @@ export default function SearchModal() {
             onChange={(e) => {
               setValue(e.target.value);
             }}
+            onClick={() => {
+              setValue("");
+            }}
             placeholder='top 10 cats breads'
             required
           />
-          <button type='sumbit' className='btn_animation !rounded-none text-xs'>
-            <span>Search</span>
-          </button>
+          <Link
+            href={`/search?s=${value}`}
+            onClick={() => {
+              setSearchModal(false);
+            }}
+          >
+            <button
+              type='sumbit'
+              className='btn_animation !rounded-none text-xs'
+            >
+              <span>Search</span>
+            </button>
+          </Link>
         </div>
       </div>
     </main>

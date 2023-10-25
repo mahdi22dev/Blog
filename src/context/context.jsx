@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
   const [footerTags, setFootertags] = useState([]);
   const [footerLatest, setFooterLatest] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchModal, setSearchModal] = useState(true);
+  const [searchModal, setSearchModal] = useState(false);
   const fetchTags = async () => {
     setLoading(true);
     const TagsQuery = "*[_type == 'category'] {title,color}";
@@ -33,6 +33,10 @@ const AppProvider = ({ children }) => {
       return;
     }
     if (pathname.includes("author")) {
+      sethighlight("/blog");
+      return;
+    }
+    if (pathname.includes("search")) {
       sethighlight("/blog");
       return;
     }
