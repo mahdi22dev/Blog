@@ -14,11 +14,13 @@ import RelatedArticles from "@/components/Post/Recent/RelatedArticles";
 import BackToTopButton from "@/components/Post/BackToTopButton";
 import ScrollAnimation from "@/components/Post/ScrollAnimation";
 import Subscribe from "@/components/Subscribe/Subscribe";
+import Comments from "@/components/comments/Comments";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
   const query = `
   *[_type == "post" && slug.current == $slug][0] {
+    _id,
     title,
     mainImage,
   body,_createdAt,
@@ -104,6 +106,7 @@ export default async function Home({ params }) {
             </div>
           </article>
           <AuthorInfo info={post?.author} />
+          <Comments slug={slug} post={post} />
           <RelatedArticles />
           <Subscribe />
         </div>

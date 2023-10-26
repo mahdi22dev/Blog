@@ -13,6 +13,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.18.0",
     "@tailwindcss/typography": "^0.5.10",
+    "disqus-react": "^1.1.5",
     "framer-motion": "^10.16.4",
     "moment": "^2.29.4",
     "next": "^13.5.4",
