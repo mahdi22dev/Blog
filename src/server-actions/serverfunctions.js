@@ -1,3 +1,4 @@
+"use server";
 import { client } from "../../sanity/lib/client";
 
 export async function Initialsearch(search) {
@@ -20,7 +21,7 @@ export async function Paginationblog(start, end) {
   return posts;
 }
 
-export async function Initialblog(search, start, end) {
+export async function Initialblog() {
   const query =
     '*[_type == "post"]{ _id, title, mainImage,"slug":slug.current,categories[]->{title},_createdAt, "authorname": author->name }[0..5]';
   const posts = await client.fetch(query);
