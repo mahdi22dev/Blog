@@ -54,7 +54,6 @@ export async function generateStaticParams() {
   *[_type == "post"]{"slug": slug.current}
 `;
   const posts = await client.fetch(query);
-  console.log(posts);
   return posts.map((post) => ({
     slug: post.slug,
   }));

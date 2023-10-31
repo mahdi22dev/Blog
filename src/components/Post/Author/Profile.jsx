@@ -6,7 +6,6 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 
 export default function Profile({ post }) {
-  console.log(post);
   return (
     <div className='flex justify-start items-center gap-5'>
       <Tooltip id='my-tooltip' />
