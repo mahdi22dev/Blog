@@ -15,6 +15,9 @@ import ScrollAnimation from "@/components/Post/ScrollAnimation";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import Comments from "@/components/comments/Comments";
 
+export const revalidate = 604800; // revalidate the data at most every weel
+export const dynamicParams = true;
+
 export async function generateMetadata({ params }) {
   const slug = params.slug;
   const query = `
@@ -43,6 +46,18 @@ export async function generateMetadata({ params }) {
       images: [urlFor(post.mainImage).width(500).width(500).url()],
     },
   };
+}
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const query = `
+  *[_type == "post"]{"slug": slug.current}
+`;
+  const posts = await client.fetch(query);
+  console.log(posts);
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function Home({ params }) {
