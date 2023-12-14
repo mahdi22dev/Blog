@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 export default function OurtagsSingle({ post }) {
-  const imageSrc = urlFor(post.mainImage).width(500).height(500).url();
+  const imageSrc = urlFor(post.mainImage).width(350).height(350).url();
   return (
     <Link
       href={`/tags/${post.title}`}

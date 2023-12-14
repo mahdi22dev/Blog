@@ -13,8 +13,8 @@ export default function Featured({ post, maxw, width, className }) {
         className={`${width} ${maxw} h-[450px] relative brightness-[75%] group-hover:scale-110 transition-transform duration-500 ease-out`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
-            .width(500)
-            .height(500)
+            .width(350)
+            .height(350)
             .url()}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",

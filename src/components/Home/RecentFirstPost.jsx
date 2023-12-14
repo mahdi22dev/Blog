@@ -13,8 +13,8 @@ export default function RecentFirstPost({ post }) {
         className={`h-[450px] relative transition-transform duration-500 ease-out rounded-2xl`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
-            .width(500)
-            .height(500)
+            .width(350)
+            .height(350)
             .url()}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",

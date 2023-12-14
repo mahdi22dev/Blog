@@ -4,7 +4,7 @@ import { dateFormater } from "@/utils/utils";
 import { urlFor } from "@/utils/sanity-utils";
 
 export default function RelatedArticlesSingle({ post }) {
-  const imageSrc = urlFor(post.mainImage).url();
+  const imageSrc = urlFor(post.mainImage).width(350).height(350).url();
   return (
     <div className=''>
       <Link

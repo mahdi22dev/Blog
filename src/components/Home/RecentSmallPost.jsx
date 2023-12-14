@@ -7,7 +7,7 @@ export default function RecentSmallPost({ post }) {
     <div className='mx-auto group mb-4 md:mb-auto m-2 w-[100%] md:w-auto mt-4 '>
       <div className='relative w-full min-w-[15vw] h-[27rem] md:h-96 mb-7'>
         <Image
-          src={urlFor(post.mainImage).width(500).height(500).url()}
+          src={urlFor(post.mainImage).width(350).height(350).url()}
           alt='image'
           fill
           className='rounded-2xl'
