@@ -13,8 +13,8 @@ export default function SliderSinglePost({ post }) {
         className={`h-full relative transition-transform duration-500 ease-out`}
         style={{
           backgroundImage: `url('${urlFor(post.mainImage)
-            .width(300)
-            .height(300)
+            .width(750)
+            .height(750)
             .url()}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
     _id,
     title,
     mainImage,
-  body,_createdAt,
+    body,_createdAt,
     author-> {
      image,
      name,

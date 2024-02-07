@@ -16,8 +16,8 @@ export default async function page() {
   const slicedPosts = posts.slice(startIndex);
   const sliderPosts = posts.slice(13);
   return (
-    <main className='mx-auto w-full max-w-7xl p-3 min-h-screen'>
-      <section className='mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1 mb-10 overflow-hidden'>
+    <main className="mx-auto w-full max-w-7xl p-3 min-h-screen">
+      <section className="mx-auto flex flex-col md:flex-row p-3 max-w-6xl gap-1 mb-10 overflow-hidden">
         <Featured
           post={posts[0]}
           width={"w-[80vw] md:w-[600px]"}
@@ -35,16 +35,16 @@ export default async function page() {
         />
       </section>
       <OurTags />
-      <SectionHeader text={"Most Viewd "} subtext={"View More"} />
+      <SectionHeader text={"Most Viewd"} subtext={"View More"} />
       <Slider posts={sliderPosts} />
       <HomeRecentPosts post={posts[3]} />
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 max-w-6xl mx-auto mb-10'>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3 max-w-6xl mx-auto mb-10">
         {slicedPosts.map((post) => {
           return <RecentSmallPost key={post.title} post={post} />;
         })}
       </div>
       <Link href={"/blog"}>
-        <button className='mt-3 mb-10 mx-auto btn_animation text-xs'>
+        <button className="mt-3 mb-10 mx-auto btn_animation text-xs">
           <span>View All Posts</span>
         </button>
       </Link>
