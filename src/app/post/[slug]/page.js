@@ -123,6 +123,7 @@ export default async function Home({ params }) {
           <RelatedArticles />
           <Subscribe />
         </div>
+
         <RecentPosts />
       </main>
     </>

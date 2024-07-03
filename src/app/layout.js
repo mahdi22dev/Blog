@@ -21,17 +21,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className='!scroll-smooth'>
+    <html lang="en" className="!scroll-smooth">
+      <script
+        type="text/javascript"
+        src="//pl23684301.highrevenuenetwork.com/ce/5e/1b/ce5e1be1e1f76ad4d4d04f84beea03b4.js"
+      ></script>
       <body className={`${josefin_Sans.className}`}>
         <AppProvider>
           <SearchContainer />
-          <div id='top' className='hidden'></div>
+          <div id="top" className="hidden"></div>
           <BackToTopButton />
           <ToastContainer />
-          <NextTopLoader color='#dca8a9' height={5} zIndex={100000} />
-          <div className='h-[2px] bg-gray-200'></div>
+          <NextTopLoader color="#dca8a9" height={5} zIndex={100000} />
+          <div className="h-[2px] bg-gray-200"></div>
           <Header />
-          <div className='h-[2px] bg-gray-200'></div>
+          <div className="h-[2px] bg-gray-200"></div>
           {children}
           <Footer />
         </AppProvider>
