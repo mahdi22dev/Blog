@@ -15,6 +15,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "disqus-react": "^1.1.5",
     "framer-motion": "^10.16.4",
+    "get-it": "^8.6.2",
     "moment": "^2.29.4",
     "next": "^13.5.4",
     "next-sanity": "^5.5.8",
